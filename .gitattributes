@@ -1,3 +1,0 @@
-.unityweb filter=lfs diff=lfs merge=lfs -text
-.UNITYWEB filter=lfs diff=lfs merge=lfs -text
-webgl/** filter=lfs diff=lfs merge=lfs -text

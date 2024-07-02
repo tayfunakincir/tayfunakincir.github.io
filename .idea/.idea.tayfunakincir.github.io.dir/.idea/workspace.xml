@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="036069c4-761b-4bc6-bbf8-0c509cd5f983" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webgl/index.html" beforeDir="false" />
-    </list>
+    <list default="true" id="036069c4-761b-4bc6-bbf8-0c509cd5f983" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -52,7 +49,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1719949867120</updated>
-      <workItem from="1719949869848" duration="1477000" />
+      <workItem from="1719949869848" duration="2306000" />
     </task>
     <servers />
   </component>
