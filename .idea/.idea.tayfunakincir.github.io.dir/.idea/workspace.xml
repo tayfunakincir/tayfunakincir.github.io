@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="036069c4-761b-4bc6-bbf8-0c509cd5f983" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.tayfunakincir.github.io.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.tayfunakincir.github.io.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/bg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/images/bg.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +30,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -53,6 +56,8 @@
       <updated>1719949867120</updated>
       <workItem from="1719949869848" duration="2306000" />
       <workItem from="1719963290440" duration="608000" />
+      <workItem from="1720054551037" duration="542000" />
+      <workItem from="1720094329970" duration="3133000" />
     </task>
     <servers />
   </component>
