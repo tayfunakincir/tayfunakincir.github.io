@@ -25,7 +25,7 @@
 						<div class="content">
 							<div class="inner">
 								<h1>Tayfun Akincir</h1>
-								<p>Innovative Game Engine & VR/AR Developer<br />
+								<p>XR Software Developer<br />
 								Unity3D, Unreal Engine, C#, C++, Python</p>
 							</div>
 						</div>
@@ -43,139 +43,477 @@
 				<!-- Main -->
 					<div id="main">
 
-						<!-- Work -->
-							<article id="intro">
-								<h2 class="major">Overview of my work</h2>
-								<h3 class="alt">Arcane Arsenal - 2024</h3>
-								<h5>Prototype to implement replication and other network functions with C++, as well as testing blueprints and their performance</h5>
-								<span class="image main"><img src="images/work1.jpg" alt="" /></span>
-									• <b>Location:</b> Litexa GmbH<br>
-									• <b>Environment:</b> Unreal Engine<br>
-									• <b>Used language:</b> C++<br>
-									• <b>Teamsize:</b> Solo Development<br>
-									• <b>Development time:</b> 1 month<br>
-								<div id="hyperlink1"><b>Video showing the project:</b> <a href="https://1drv.ms/v/c/cdbca53e5a3fb05c/EY7gbNFVTrNIhlAey146DDEBfMN-eoCTO1k5UKJJCpKDZg?e=u0uQU5" target="_blank" rel="noopener noreferrer">Click me!</a></div>
-								
-								<hr class="solid">
+                        <!-- Work -->
+                        <article id="intro">
+                            <h2 class="major">Overview of my work</h2>
 
-								<h3 class="alt">VR House Designer - 2024</h3>
-								<h5>Virtual reality house designer with collaborative furnishing options</h5>
-								<span class="image main"><img src="images/work2.jpg" alt="" /></span>
-								• <b>Location:</b> Litexa GmbH<br>
-								• <b>Environment:</b> Unity3D, HurricaneVR, Photon Fusion, VRIK<br>
-								• <b>Used language:</b> C#<br>
-								• <b>Teamsize:</b> 3 <br>
-								• <b>Development time:</b> 3 months<br>
-								<div id="hyperlink2"><b>Video showing the project:</b> <a href="https://1drv.ms/v/c/cdbca53e5a3fb05c/EY4GiQKe53hCsaD9hPWqS3MBCSCAkW6I1vC4jNSsQ1vnjg?e=QvDB4A" target="_blank" rel="noopener noreferrer">Click me!</a></div>
-								
-								<hr class="solid">
+                            <!-- Project Grid -->
+                            <div class="project-grid">
+                                <!-- Arcane Arsenal -->
+                                <div class="project-card" onclick="showProjectDetails('project1')">
+                                    <div class="project-image">
+                                        <img src="images/work1.jpg" alt="Arcane Arsenal" />
+                                        <div class="project-overlay">
+                                            <div class="project-year">2024</div>
+                                            <div class="project-tech">C++ • Unreal Engine</div>
+                                        </div>
+                                    </div>
+                                    <div class="project-info">
+                                        <h3>Arcane Arsenal</h3>
+                                        <p class="project-summary">Network replication prototype with C++ implementation</p>
+                                        <div class="project-tags">
+                                            <span class="tag">Multiplayer</span>
+                                            <span class="tag">Blueprints</span>
+                                        </div>
+                                    </div>
+                                </div>
 
-								<h3 class="alt">Antilatency Showroom - 2023/2024</h3>
-								<h5>Showroom software for antilatency body tracking with VRIK and multiplayer integration</h5>
-								<span class="image main"><img src="images/work3.jpg" alt="" /></span>
-								• <b>Location:</b> Litexa GmbH<br>
-								• <b>Environment:</b> Unity3D, HurricaneVR, Photon Fusion, VRIK<br>
-								• <b>Used language:</b> C#<br>
-								• <b>Teamsize:</b> 3 <br>
-								• <b>Development time:</b> 1 year<br>
-								<div id="hyperlink3"><b>Video showing the project:</b> <a href="https://1drv.ms/v/c/cdbca53e5a3fb05c/EZIeY6WflpBGl0gnzr3bb0IBJ2TlPem4K-AtoaiFaqGo0Q?e=WHsjNw" target="_blank" rel="noopener noreferrer">Click me!</a></div>
-								
-								<hr class="solid">
+                                <!-- VR House Designer -->
+                                <div class="project-card" onclick="showProjectDetails('project2')">
+                                    <div class="project-image">
+                                        <img src="images/work2.jpg" alt="VR House Designer" />
+                                        <div class="project-overlay">
+                                            <div class="project-year">2024</div>
+                                            <div class="project-tech">C# • Unity • VR</div>
+                                        </div>
+                                    </div>
+                                    <div class="project-info">
+                                        <h3>VR House Designer</h3>
+                                        <p class="project-summary">Collaborative VR furnishing application</p>
+                                        <div class="project-tags">
+                                            <span class="tag">VR</span>
+                                            <span class="tag">Collaboration</span>
+                                        </div>
+                                    </div>
+                                </div>
 
-								<h3 class="alt">Procedural Mesh Generation - 2023</h3>
-								<h5>Procedural Mesh Generation as part of a house design editor</h5>
-								<span class="image main"><img src="images/work4.jpg" alt="" /></span>
-								• <b>Location:</b> Litexa GmbH<br>
-								• <b>Environment:</b> Unity3D, Simple- und Advanced Mesh API, Probuilder API<br>
-								• <b>Used language:</b> C#<br>
-								• <b>Teamsize:</b> Solo Development <br>
-								• <b>Development time:</b> 1 month<br>
-								<div id="hyperlink4"><b>Video showing the project:</b> <a href="https://1drv.ms/v/c/cdbca53e5a3fb05c/EbXi_2ua2ktJrnL6PFaBZFcBE-xvH2_E6IKbyjMCm1yFCg?e=RorroL" target="_blank" rel="noopener noreferrer">Click me!</a></div>
+                                <!-- Antilatency Showroom -->
+                                <div class="project-card" onclick="showProjectDetails('project3')">
+                                    <div class="project-image">
+                                        <img src="images/work3.jpg" alt="Antilatency Showroom" />
+                                        <div class="project-overlay">
+                                            <div class="project-year">2023-2024</div>
+                                            <div class="project-tech">C# • Unity • VRIK</div>
+                                        </div>
+                                    </div>
+                                    <div class="project-info">
+                                        <h3>Antilatency Showroom</h3>
+                                        <p class="project-summary">Body tracking showroom with multiplayer support</p>
+                                        <div class="project-tags">
+                                            <span class="tag">Body Tracking</span>
+                                            <span class="tag">Multiplayer</span>
+                                        </div>
+                                    </div>
+                                </div>
 
-								<hr class="solid">
+                                <!-- Procedural Mesh Generation -->
+                                <div class="project-card" onclick="showProjectDetails('project4')">
+                                    <div class="project-image">
+                                        <img src="images/work4.jpg" alt="Procedural Mesh Generation" />
+                                        <div class="project-overlay">
+                                            <div class="project-year">2023</div>
+                                            <div class="project-tech">C# • Unity • ProBuilder</div>
+                                        </div>
+                                    </div>
+                                    <div class="project-info">
+                                        <h3>Procedural Mesh Generation</h3>
+                                        <p class="project-summary">Dynamic mesh creation for house design editor</p>
+                                        <div class="project-tags">
+                                            <span class="tag">Procedural</span>
+                                            <span class="tag">Mesh API</span>
+                                        </div>
+                                    </div>
+                                </div>
 
-								<h3 class="alt">VR-Triage Prototype for emergency medical clinical care - 2022</h3>
-								<h5>Process illustration of triaging in an emergency room<br>Developed as part of my bachelor thesis</h5>
-								<span class="image main"><img src="images/work5.jpg" alt="" /></span>
-								• <b>Location:</b> Universitätsklinikum Heidelberg<br>
-								• <b>Environment:</b> Unity3D, SteamVR<br>
-								• <b>Used language:</b> C#<br>
-								• <b>Teamsize:</b> Solo Development <br>
-								• <b>Development time:</b> 4 months<br>
-								<div id="hyperlink5"><b>Video showing the project:</b> <a href="https://1drv.ms/v/c/cdbca53e5a3fb05c/ES7_bkB_8mZLlIdyDlcUWtwBAd2W3-RXWXnCAb0dsqchEQ?e=gft78b" target="_blank" rel="noopener noreferrer">Click me!</a><br><b>Link to my bachelor thesis:</b> <a href="https://www.dropbox.com/s/3c88v03o6eyj2if/BA_Thesis_TAYFUN_AKINCIR.pdf?dl=0" target="_blank" rel="noopener noreferrer">Click me!</a></div>
+                                <!-- VR Triage -->
+                                <div class="project-card" onclick="showProjectDetails('project5')">
+                                    <div class="project-image">
+                                        <img src="images/work5.jpg" alt="VR Triage" />
+                                        <div class="project-overlay">
+                                            <div class="project-year">2022</div>
+                                            <div class="project-tech">C# • Unity • VR</div>
+                                        </div>
+                                    </div>
+                                    <div class="project-info">
+                                        <h3>VR-Triage Prototype</h3>
+                                        <p class="project-summary">Emergency medical care simulation (Bachelor Thesis)</p>
+                                        <div class="project-tags">
+                                            <span class="tag">Medical</span>
+                                            <span class="tag">Thesis</span>
+                                        </div>
+                                    </div>
+                                </div>
 
-								<hr class="solid">
+                                <!-- VRex -->
+                                <div class="project-card" onclick="showProjectDetails('project6')">
+                                    <div class="project-image">
+                                        <img src="images/work6.jpg" alt="VRex" />
+                                        <div class="project-overlay">
+                                            <div class="project-year">2022</div>
+                                            <div class="project-tech">C# • Unity • VR</div>
+                                        </div>
+                                    </div>
+                                    <div class="project-info">
+                                        <h3>VRex: Virtual Paleontology</h3>
+                                        <p class="project-summary">Interactive paleontology serious game</p>
+                                        <div class="project-tags">
+                                            <span class="tag">Educational</span>
+                                            <span class="tag">Serious Game</span>
+                                        </div>
+                                    </div>
+                                </div>
 
-								<h3 class="alt">VRex: Virtual Paleontology - 2022</h3>
-								<h5>Serious Game made as an interactive depiction of work processes in paleontology</h5>
-								<span class="image main"><img src="images/work6.jpg" alt="" /></span>
-								• <b>Location:</b> SRH Hochschule Heidelberg<br>
-								• <b>Environment:</b> Unity3D, SteamVR<br>
-								• <b>Used language:</b> C#<br>
-								• <b>Teamsize:</b> 7<br>
-								• <b>Development time:</b> 4 months<br>
-								<div id="hyperlink6"><b>Video showing the project:</b> <a href="https://1drv.ms/v/c/cdbca53e5a3fb05c/EVhWCvYvmDpEuTIhvI14m2YB4_0f7e1JrEp5X_cUnThhZg?e=Dzw25d" target="_blank" rel="noopener noreferrer">Click me!</a></div>
+                                <!-- UI Pattern Paper -->
+                                <div class="project-card publication" onclick="showProjectDetails('project7')">
+                                    <div class="project-image">
+                                        <img src="images/work11.jpg" alt="UI Pattern Paper" />
+                                        <div class="project-overlay">
+                                            <div class="project-year">2022</div>
+                                            <div class="project-tech">Research • Publication</div>
+                                        </div>
+                                    </div>
+                                    <div class="project-info">
+                                        <h3>UI Design Patterns Paper</h3>
+                                        <p class="project-summary">Overview of 200+ VR/AR/MR design patterns</p>
+                                        <div class="project-tags">
+                                            <span class="tag">Research</span>
+                                            <span class="tag">Academic</span>
+                                        </div>
+                                    </div>
+                                </div>
 
-								<hr class="solid">
+                                <!-- Rossmann VR -->
+                                <div class="project-card" onclick="showProjectDetails('project8')">
+                                    <div class="project-image">
+                                        <img src="images/work7.jpg" alt="Rossmann VR" />
+                                        <div class="project-overlay">
+                                            <div class="project-year">2021</div>
+                                            <div class="project-tech">C# • Unity • VR</div>
+                                        </div>
+                                    </div>
+                                    <div class="project-info">
+                                        <h3>Rossmann VR</h3>
+                                        <p class="project-summary">Interactive workplace presentation for Rossmann</p>
+                                        <div class="project-tags">
+                                            <span class="tag">Commercial</span>
+                                            <span class="tag">Training</span>
+                                        </div>
+                                    </div>
+                                </div>
 
-								<h3 class="alt">An Overview of User Interface and Interaction Design Patterns for VR, AR, and MR Applications - 2022</h3>
-								<h5>paper containing an overview of over 200 patterns found in collections on several websites</h5>
-								<span class="image main"><img src="images/work11.jpg" alt="" /></span>
-								• <b>DOI:</b> 10.18420/muc2022-mci-ws06-419<br>
-								• <b>Release:</b> September 2022<br>
-								• <b>Authorship:</b> 2nd author<br>
-								• <b>Note:</b> Based on my research work, which originally also contains norms and guidelines.<br>
-								<div id="hyperlink7"><b>Link to the paper:</b> <a href="https://www.researchgate.net/publication/363263265_An_Overview_of_User_Interface_and_Interaction_Design_Patterns_for_VR_AR_and_MR_Applications" target="_blank" rel="noopener noreferrer">Click me!</a></div>
+                                <!-- KIND VR -->
+                                <div class="project-card" onclick="showProjectDetails('project9')">
+                                    <div class="project-image">
+                                        <img src="images/work8.jpg" alt="KIND VR" />
+                                        <div class="project-overlay">
+                                            <div class="project-year">2021</div>
+                                            <div class="project-tech">C# • Unity • VR</div>
+                                        </div>
+                                    </div>
+                                    <div class="project-info">
+                                        <h3>KIND VR</h3>
+                                        <p class="project-summary">Interactive workplace presentation for KIND</p>
+                                        <div class="project-tags">
+                                            <span class="tag">Commercial</span>
+                                            <span class="tag">Training</span>
+                                        </div>
+                                    </div>
+                                </div>
 
-								<hr class="solid">
+                                <!-- University Recipes -->
+                                <div class="project-card" onclick="showProjectDetails('project10')">
+                                    <div class="project-image">
+                                        <img src="images/work9.jpg" alt="University Recipes" />
+                                        <div class="project-overlay">
+                                            <div class="project-year">2020-2021</div>
+                                            <div class="project-tech">C# • Unity • VR</div>
+                                        </div>
+                                    </div>
+                                    <div class="project-info">
+                                        <h3>University Recipes</h3>
+                                        <p class="project-summary">Humorous VR cooking simulation for students</p>
+                                        <div class="project-tags">
+                                            <span class="tag">Game</span>
+                                            <span class="tag">Simulation</span>
+                                        </div>
+                                    </div>
+                                </div>
 
-								<h3 class="alt">Rossmann VR - 2021</h3>
-								<h5>An interactive presentation of everyday working life at Rossmann</h5>
-								<span class="image main"><img src="images/work7.jpg" alt="" /></span>
-								• <b>Location:</b> Einfach Genial aGmbH<br>
-								• <b>Environment:</b> Unity3D, SteamVR<br>
-								• <b>Used language:</b> C#<br>
-								• <b>Teamsize:</b> 2<br>
-								• <b>Development time:</b> 1 month<br>
-								<div id="hyperlink8"><b>Video showing the project:</b> <a href="https://1drv.ms/v/c/cdbca53e5a3fb05c/EdwzeGHspGFCoXQwr5QTsecBsxEis7uhuJij9iTroG_YPA?e=qcEDqZ" target="_blank" rel="noopener noreferrer">Click me!</a></div>
+                                <!-- Blade Gunner -->
+                                <div class="project-card" onclick="showProjectDetails('project11')">
+                                    <div class="project-image">
+                                        <img src="images/work10.jpg" alt="Blade Gunner" />
+                                        <div class="project-overlay">
+                                            <div class="project-year">2020</div>
+                                            <div class="project-tech">C++ • Raylib</div>
+                                        </div>
+                                    </div>
+                                    <div class="project-info">
+                                        <h3>Blade Gunner</h3>
+                                        <p class="project-summary">Classic "Gauntlet"-inspired university project</p>
+                                        <div class="project-tags">
+                                            <span class="tag">Game</span>
+                                            <span class="tag">C++</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
-								<hr class="solid">
+                            <!-- Project Detail Modals -->
+                            <div id="project-modal" class="modal">
+                                <div class="modal-content">
+                                    <span class="close" onclick="closeProjectDetails()">&times;</span>
+                                    <div id="modal-body">
+                                        <!-- Dynamic content will be loaded here -->
+                                    </div>
+                                </div>
+                            </div>
 
-								<h3 class="alt">KIND VR - 2021</h3>
-								<h5>An interactive presentation of everyday working life at KIND</h5>
-								<span class="image main"><img src="images/work8.jpg" alt="" /></span>
-								• <b>Location:</b> Einfach Genial aGmbH<br>
-								• <b>Environment:</b> Unity3D, SteamVR<br>
-								• <b>Used language:</b> C#<br>
-								• <b>Teamsize:</b> 2<br>
-								• <b>Development time:</b> 1 month<br>
-								<div id="hyperlink9"><b>Video showing the project:</b> <a href="https://1drv.ms/v/c/cdbca53e5a3fb05c/EVeZrDTDReROlVZrzcXlATAB6y1M0CKlOqARlS_FV774aA?e=QbRRbQ" target="_blank" rel="noopener noreferrer">Click me!</a></div>
+                            <!-- Filter Controls -->
+                            <div class="filter-controls">
+                                <h4>Filter by Technology:</h4>
+                                <div class="filter-tags">
+                                    <button class="filter-btn active" data-filter="all">All Projects</button>
+                                    <button class="filter-btn" data-filter="vr">VR</button>
+                                    <button class="filter-btn" data-filter="unity">Unity</button>
+                                    <button class="filter-btn" data-filter="unreal">Unreal</button>
+                                    <button class="filter-btn" data-filter="cpp">C++</button>
+                                    <button class="filter-btn" data-filter="multiplayer">Multiplayer</button>
+                                    <button class="filter-btn" data-filter="commercial">Commercial</button>
+                                </div>
+                            </div>
 
-								<hr class="solid">
+                            <script>
+                                // Project details data
+                                const projectDetails = {
+                                    project1: {
+                                        title: "Arcane Arsenal - 2024",
+                                        description: "Prototype to implement replication and other network functions with C++, as well as testing blueprints and their performance",
+                                        image: "images/work1.jpg",
+                                        details: [
+                                            "<b>Location:</b> Litexa GmbH",
+                                            "<b>Environment:</b> Unreal Engine",
+                                            "<b>Used language:</b> C++",
+                                            "<b>Teamsize:</b> Solo Development",
+                                            "<b>Development time:</b> 1 month"
+                                        ],
+                                        video: "https://1drv.ms/v/c/cdbca53e5a3fb05c/EY7gbNFVTrNIhlAey146DDEBfMN-eoCTO1k5UKJJCpKDZg?e=u0uQU5"
+                                    },
+                                    project2: {
+                                        title: "VR House Designer - 2024",
+                                        description: "Virtual reality house designer with collaborative furnishing options",
+                                        image: "images/work2.jpg",
+                                        details: [
+                                            "<b>Location:</b> Litexa GmbH",
+                                            "<b>Environment:</b> Unity3D, HurricaneVR, Photon Fusion, VRIK",
+                                            "<b>Used language:</b> C#",
+                                            "<b>Teamsize:</b> 3",
+                                            "<b>Development time:</b> 3 months"
+                                        ],
+                                        video: "https://1drv.ms/v/c/cdbca53e5a3fb05c/EY4GiQKe53hCsaD9hPWqS3MBCSCAkW6I1vC4jNSsQ1vnjg?e=QvDB4A"
+                                    },
+                                    project3: {
+                                        title: "Antilatency Showroom - 2023/2024",
+                                        description: "Showroom software for antilatency body tracking with VRIK and multiplayer integration",
+                                        image: "images/work3.jpg",
+                                        details: [
+                                            "<b>Location:</b> Litexa GmbH",
+                                            "<b>Environment:</b> Unity3D, HurricaneVR, Photon Fusion, VRIK",
+                                            "<b>Used language:</b> C#",
+                                            "<b>Teamsize:</b> 3",
+                                            "<b>Development time:</b> 1 year"
+                                        ],
+                                        video: "https://1drv.ms/v/c/cdbca53e5a3fb05c/EZIeY6WflpBGl0gnzr3bb0IBJ2TlPem4K-AtoaiFaqGo0Q?e=WHsjNw"
+                                    },
+                                    project4: {
+                                        title: "Procedural Mesh Generation - 2023",
+                                        description: "Procedural Mesh Generation as part of a house design editor",
+                                        image: "images/work4.jpg",
+                                        details: [
+                                            "<b>Location:</b> Litexa GmbH",
+                                            "<b>Environment:</b> Unity3D, Simple- und Advanced Mesh API, Probuilder API",
+                                            "<b>Used language:</b> C#",
+                                            "<b>Teamsize:</b> Solo Development",
+                                            "<b>Development time:</b> 1 month"
+                                        ],
+                                        video: "https://1drv.ms/v/c/cdbca53e5a3fb05c/EbXi_2ua2ktJrnL6PFaBZFcBE-xvH2_E6IKbyjMCm1yFCg?e=RorroL"
+                                    },
+                                    project5: {
+                                        title: "VR-Triage Prototype for emergency medical clinical care - 2022",
+                                        description: "Process illustration of triaging in an emergency room<br>Developed as part of my bachelor thesis",
+                                        image: "images/work5.jpg",
+                                        details: [
+                                            "<b>Location:</b> Universitätsklinikum Heidelberg",
+                                            "<b>Environment:</b> Unity3D, SteamVR",
+                                            "<b>Used language:</b> C#",
+                                            "<b>Teamsize:</b> Solo Development",
+                                            "<b>Development time:</b> 4 months"
+                                        ],
+                                        video: "https://1drv.ms/v/c/cdbca53e5a3fb05c/ES7_bkB_8mZLlIdyDlcUWtwBAd2W3-RXWXnCAb0dsqchEQ?e=gft78b",
+                                        thesis: "https://www.dropbox.com/s/3c88v03o6eyj2if/BA_Thesis_TAYFUN_AKINCIR.pdf?dl=0"
+                                    },
+                                    project6: {
+                                        title: "VRex: Virtual Paleontology - 2022",
+                                        description: "Serious Game made as an interactive depiction of work processes in paleontology",
+                                        image: "images/work6.jpg",
+                                        details: [
+                                            "<b>Location:</b> SRH Hochschule Heidelberg",
+                                            "<b>Environment:</b> Unity3D, SteamVR",
+                                            "<b>Used language:</b> C#",
+                                            "<b>Teamsize:</b> 7",
+                                            "<b>Development time:</b> 4 months"
+                                        ],
+                                        video: "https://1drv.ms/v/c/cdbca53e5a3fb05c/EVhWCvYvmDpEuTIhvI14m2YB4_0f7e1JrEp5X_cUnThhZg?e=Dzw25d"
+                                    },
+                                    project7: {
+                                        title: "An Overview of User Interface and Interaction Design Patterns for VR, AR, and MR Applications - 2022",
+                                        description: "paper containing an overview of over 200 patterns found in collections on several websites",
+                                        image: "images/work11.jpg",
+                                        details: [
+                                            "<b>DOI:</b> 10.18420/muc2022-mci-ws06-419",
+                                            "<b>Release:</b> September 2022",
+                                            "<b>Authorship:</b> 2nd author",
+                                            "<b>Note:</b> Based on my research work, which originally also contains norms and guidelines."
+                                        ],
+                                        paper: "https://www.researchgate.net/publication/363263265_An_Overview_of_User_Interface_and_Interaction_Design_Patterns_for_VR_AR_and_MR_Applications"
+                                    },
+                                    project8: {
+                                        title: "Rossmann VR - 2021",
+                                        description: "An interactive presentation of everyday working life at Rossmann",
+                                        image: "images/work7.jpg",
+                                        details: [
+                                            "<b>Location:</b> Einfach Genial aGmbH",
+                                            "<b>Environment:</b> Unity3D, SteamVR",
+                                            "<b>Used language:</b> C#",
+                                            "<b>Teamsize:</b> 2",
+                                            "<b>Development time:</b> 1 month"
+                                        ],
+                                        video: "https://1drv.ms/v/c/cdbca53e5a3fb05c/EdwzeGHspGFCoXQwr5QTsecBsxEis7uhuJij9iTroG_YPA?e=qcEDqZ"
+                                    },
+                                    project9: {
+                                        title: "KIND VR - 2021",
+                                        description: "An interactive presentation of everyday working life at KIND",
+                                        image: "images/work8.jpg",
+                                        details: [
+                                            "<b>Location:</b> Einfach Genial aGmbH",
+                                            "<b>Environment:</b> Unity3D, SteamVR",
+                                            "<b>Used language:</b> C#",
+                                            "<b>Teamsize:</b> 2",
+                                            "<b>Development time:</b> 1 month"
+                                        ],
+                                        video: "https://1drv.ms/v/c/cdbca53e5a3fb05c/EVeZrDTDReROlVZrzcXlATAB6y1M0CKlOqARlS_FV774aA?e=QbRRbQ"
+                                    },
+                                    project10: {
+                                        title: "University Recipes - 2020/2021",
+                                        description: "Humorous cooking simulation for students in VR",
+                                        image: "images/work9.jpg",
+                                        details: [
+                                            "<b>Location:</b> SRH Hochschule Heidelberg",
+                                            "<b>Environment:</b> Unity3D, XR Interaction Toolkit",
+                                            "<b>Used language:</b> C#",
+                                            "<b>Teamsize:</b> 6",
+                                            "<b>Development time:</b> 3 months"
+                                        ],
+                                        video: "https://1drv.ms/v/c/cdbca53e5a3fb05c/EcplHZ343z9DuLbqCH-y5UABuwYG1103MmpEcTtLmv7sbA?e=g7ZPKq"
+                                    },
+                                    project11: {
+                                        title: "Blade Gunner - 2020",
+                                        description: "University project that is thematically based on the classic \"Gauntlet\"",
+                                        image: "images/work10.jpg",
+                                        details: [
+                                            "<b>Location:</b> SRH Hochschule Heidelberg",
+                                            "<b>Environment:</b> Raylib",
+                                            "<b>Used language:</b> C++",
+                                            "<b>Teamsize:</b> 5",
+                                            "<b>Development time:</b> 3 months"
+                                        ],
+                                        video: "https://1drv.ms/v/c/cdbca53e5a3fb05c/EUcytEcf-3lNqLJtwD7LOuQB9zciP9JLLxei_UMaSUGuzQ?e=kZuT6K"
+                                    }
+                                };
 
-								<h3 class="alt">University Recipes - 2020/2021</h3>
-								<h5>Humorous cooking simulation for students in VR</h5>
-								<span class="image main"><img src="images/work9.jpg" alt="" /></span>
-								• <b>Location:</b> SRH Hochschule Heidelberg<br>
-								• <b>Environment:</b> Unity3D, XR Interaction Toolkit<br>
-								• <b>Used language:</b> C#<br>
-								• <b>Teamsize:</b> 6<br>
-								• <b>Development time:</b> 3 months<br>
-								<div id="hyperlink10"><b>Video showing the project:</b> <a href="https://1drv.ms/v/c/cdbca53e5a3fb05c/EcplHZ343z9DuLbqCH-y5UABuwYG1103MmpEcTtLmv7sbA?e=g7ZPKq" target="_blank" rel="noopener noreferrer">Click me!</a></div>
+                                // Show project details
+                                function showProjectDetails(projectId) {
+                                    const project = projectDetails[projectId];
+                                    if (!project) return;
 
-								<hr class="solid">
+                                    const modal = document.getElementById('project-modal');
+                                    const modalBody = document.getElementById('modal-body');
 
-								<h3 class="alt">Blade Gunner - 2020</h3>
-								<h5>University project that is thematically based on the classic "Gauntlet"</h5>
-								<span class="image main"><img src="images/work10.jpg" alt="" /></span>
-								• <b>Location:</b> SRH Hochschule Heidelberg<br>
-								• <b>Environment:</b> Raylib<br>
-								• <b>Used language:</b> C++<br>
-								• <b>Teamsize:</b> 5<br>
-								• <b>Development time:</b> 3 months<br>
-								<div id="hyperlink11"><b>Video showing the project:</b> <a href="https://1drv.ms/v/c/cdbca53e5a3fb05c/EUcytEcf-3lNqLJtwD7LOuQB9zciP9JLLxei_UMaSUGuzQ?e=kZuT6K" target="_blank" rel="noopener noreferrer">Click me!</a></div>
-								
-							</article>
+                                    let links = '';
+                                    if (project.video) {
+                                        links += `<div><b>Video showing the project:</b> <a href="${project.video}" target="_blank" rel="noopener noreferrer">Click me!</a></div>`;
+                                    }
+                                    if (project.thesis) {
+                                        links += `<div><b>Link to my bachelor thesis:</b> <a href="${project.thesis}" target="_blank" rel="noopener noreferrer">Click me!</a></div>`;
+                                    }
+                                    if (project.paper) {
+                                        links += `<div><b>Link to the paper:</b> <a href="${project.paper}" target="_blank" rel="noopener noreferrer">Click me!</a></div>`;
+                                    }
+
+                                    modalBody.innerHTML = `
+										<h3 class="alt">${project.title}</h3>
+										<h5>${project.description}</h5>
+										<span class="image main"><img src="${project.image}" alt="" /></span>
+										${project.details.map(detail => `${detail}<br>`).join('')}
+										${links}
+									`;
+
+                                    modal.style.display = 'block';
+                                }
+
+                                // Close project details
+                                function closeProjectDetails() {
+                                    document.getElementById('project-modal').style.display = 'none';
+                                }
+
+                                // Filter functionality
+                                document.addEventListener('DOMContentLoaded', function() {
+                                    const filterBtns = document.querySelectorAll('.filter-btn');
+                                    const projectCards = document.querySelectorAll('.project-card');
+
+                                    filterBtns.forEach(btn => {
+                                        btn.addEventListener('click', function() {
+                                            // Remove active class from all buttons
+                                            filterBtns.forEach(b => b.classList.remove('active'));
+                                            // Add active class to clicked button
+                                            this.classList.add('active');
+
+                                            const filter = this.getAttribute('data-filter');
+
+                                            projectCards.forEach(card => {
+                                                if (filter === 'all') {
+                                                    card.style.display = 'block';
+                                                } else {
+                                                    const tags = card.querySelector('.project-tags').textContent.toLowerCase();
+                                                    const tech = card.querySelector('.project-tech').textContent.toLowerCase();
+                                                    const title = card.querySelector('h3').textContent.toLowerCase();
+
+                                                    const shouldShow = tags.includes(filter) ||
+                                                        tech.includes(filter) ||
+                                                        title.includes(filter) ||
+                                                        (filter === 'vr' && tech.includes('vr')) ||
+                                                        (filter === 'unity' && tech.includes('unity')) ||
+                                                        (filter === 'unreal' && tech.includes('unreal')) ||
+                                                        (filter === 'cpp' && tech.includes('c++')) ||
+                                                        (filter === 'multiplayer' && tags.includes('multiplayer')) ||
+                                                        (filter === 'commercial' && tags.includes('commercial'));
+
+                                                    card.style.display = shouldShow ? 'block' : 'none';
+                                                }
+                                            });
+                                        });
+                                    });
+
+                                    // Close modal when clicking outside
+                                    window.onclick = function(event) {
+                                        const modal = document.getElementById('project-modal');
+                                        if (event.target == modal) {
+                                            modal.style.display = 'none';
+                                        }
+                                    }
+                                });
+                            </script>
+                        </article>
 
 						<!-- About -->
 							<article id="about">
