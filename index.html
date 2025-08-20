@@ -50,26 +50,22 @@
                             <!-- Project Grid -->
                             <div class="project-grid">
                                 <!-- Arcane Arsenal -->
-                                <div class="project-card" onclick="showProjectDetails('project1')">
-                                    <div class="project-image">
-                                        <img src="images/work1.jpg" alt="Arcane Arsenal" />
-                                        <div class="project-overlay">
-                                            <div class="project-year">2024</div>
-                                            <div class="project-tech">C++ • Unreal Engine</div>
-                                        </div>
-                                    </div>
-                                    <div class="project-info">
-                                        <h3>Arcane Arsenal</h3>
-                                        <p class="project-summary">Network replication prototype with C++ implementation</p>
-                                        <div class="project-tags">
-                                            <span class="tag">Multiplayer</span>
-                                            <span class="tag">Blueprints</span>
-                                        </div>
+                                <!-- Card -->
+                                <div class="project-card" data-modal="project1">
+                                    <h3>Project Title</h3>
+                                </div>
+
+                                <!-- Modal -->
+                                <div id="project1" class="modal-fixed">
+                                    <div class="modal-content-fixed">
+                                        <button class="close-fixed">&times;</button>
+                                        <h2>Project Details</h2>
+                                        <p>Content...</p>
                                     </div>
                                 </div>
 
                                 <!-- VR House Designer -->
-                                <div class="project-card" onclick="showProjectDetails('project2')">
+                                <div class="project-card" onclick="openModal('project2')">
                                     <div class="project-image">
                                         <img src="images/work2.jpg" alt="VR House Designer" />
                                         <div class="project-overlay">
@@ -88,7 +84,7 @@
                                 </div>
 
                                 <!-- Antilatency Showroom -->
-                                <div class="project-card" onclick="showProjectDetails('project3')">
+                                <div class="project-card" onclick="openModal('project3')">
                                     <div class="project-image">
                                         <img src="images/work3.jpg" alt="Antilatency Showroom" />
                                         <div class="project-overlay">
@@ -107,7 +103,7 @@
                                 </div>
 
                                 <!-- Procedural Mesh Generation -->
-                                <div class="project-card" onclick="showProjectDetails('project4')">
+                                <div class="project-card" onclick="openModal('project4')">
                                     <div class="project-image">
                                         <img src="images/work4.jpg" alt="Procedural Mesh Generation" />
                                         <div class="project-overlay">
@@ -126,7 +122,7 @@
                                 </div>
 
                                 <!-- VR Triage -->
-                                <div class="project-card" onclick="showProjectDetails('project5')">
+                                <div class="project-card" onclick="openModal('project5')">
                                     <div class="project-image">
                                         <img src="images/work5.jpg" alt="VR Triage" />
                                         <div class="project-overlay">
@@ -145,7 +141,7 @@
                                 </div>
 
                                 <!-- VRex -->
-                                <div class="project-card" onclick="showProjectDetails('project6')">
+                                <div class="project-card" onclick="openModal('project6')">
                                     <div class="project-image">
                                         <img src="images/work6.jpg" alt="VRex" />
                                         <div class="project-overlay">
@@ -164,7 +160,7 @@
                                 </div>
 
                                 <!-- UI Pattern Paper -->
-                                <div class="project-card publication" onclick="showProjectDetails('project7')">
+                                <div class="project-card publication" onclick="openModal('project7')">
                                     <div class="project-image">
                                         <img src="images/work11.jpg" alt="UI Pattern Paper" />
                                         <div class="project-overlay">
@@ -183,7 +179,7 @@
                                 </div>
 
                                 <!-- Rossmann VR -->
-                                <div class="project-card" onclick="showProjectDetails('project8')">
+                                <div class="project-card" onclick="openModal('project8')">
                                     <div class="project-image">
                                         <img src="images/work7.jpg" alt="Rossmann VR" />
                                         <div class="project-overlay">
@@ -202,7 +198,7 @@
                                 </div>
 
                                 <!-- KIND VR -->
-                                <div class="project-card" onclick="showProjectDetails('project9')">
+                                <div class="project-card" onclick="openModal('project9')">
                                     <div class="project-image">
                                         <img src="images/work8.jpg" alt="KIND VR" />
                                         <div class="project-overlay">
@@ -221,7 +217,7 @@
                                 </div>
 
                                 <!-- University Recipes -->
-                                <div class="project-card" onclick="showProjectDetails('project10')">
+                                <div class="project-card" onclick="openModal('project10')">
                                     <div class="project-image">
                                         <img src="images/work9.jpg" alt="University Recipes" />
                                         <div class="project-overlay">
@@ -240,7 +236,7 @@
                                 </div>
 
                                 <!-- Blade Gunner -->
-                                <div class="project-card" onclick="showProjectDetails('project11')">
+                                <div class="project-card" onclick="openModal('project11')">
                                     <div class="project-image">
                                         <img src="images/work10.jpg" alt="Blade Gunner" />
                                         <div class="project-overlay">
@@ -260,12 +256,9 @@
                             </div>
 
                             <!-- Project Detail Modals -->
-                            <div id="project-modal" class="modal">
-                                <div class="modal-content">
-                                    <span class="close" onclick="closeProjectDetails()">&times;</span>
-                                    <div id="modal-body">
-                                        <!-- Dynamic content will be loaded here -->
-                                    </div>
+                            <div id="project-modal" class="modal-viewport-fix">
+                                <div class="modal-content-fix">
+                                    <!-- Inhalt wird dynamisch gefüllt -->
                                 </div>
                             </div>
 
@@ -884,6 +877,46 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+
+        <script>
+            let currentModal = null;
+
+            function openModal(modalId) {
+                const modal = document.getElementById(modalId);
+                if (modal) {
+                    document.body.style.overflow = 'hidden';
+                    modal.classList.add('show');
+                    currentModal = modal;
+                }
+            }
+
+            function closeModal() {
+                if (currentModal) {
+                    currentModal.classList.remove('show');
+                    document.body.style.overflow = '';
+                    currentModal = null;
+                }
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+                // Cards
+                document.querySelectorAll('[data-modal]').forEach(card => {
+                    card.addEventListener('click', function() {
+                        openModal(this.getAttribute('data-modal'));
+                    });
+                });
+
+                // Close buttons
+                document.querySelectorAll('.close-fixed').forEach(btn => {
+                    btn.addEventListener('click', closeModal);
+                });
+
+                // ESC key
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape') closeModal();
+                });
+            });
+        </script>
 
 	</body>
 </html>
