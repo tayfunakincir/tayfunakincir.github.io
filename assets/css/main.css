@@ -1559,10 +1559,10 @@ body.is-preload #header .content .inner {
     position: absolute;
     top: 0;
     right: 0;
-    width: 2rem;
-    height: 2rem;
+    width: 3rem;
+    height: 3rem;
     cursor: pointer;
-    text-indent: 2rem;
+    text-indent: 3rem;
     overflow: hidden;
     white-space: nowrap;
 }
@@ -1575,14 +1575,14 @@ body.is-preload #header .content .inner {
     content: '';
     display: block;
     position: absolute;
-    top: 0.375rem;
-    left: 0.375rem;
-    width: 1.25rem;
-    height: 1.25rem;
+    top: 0.5625rem;
+    left: 0.5625rem;
+    width: 1.875rem;
+    height: 1.875rem;
     border-radius: 100%;
     background-position: center;
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='20px' height='20px' viewBox='0 0 20 20' zoomAndPan='disable'%3E%3Cstyle%3Eline %7B stroke: %23ffffff%3B stroke-width: 1%3B %7D%3C/style%3E%3Cline x1='2' y1='2' x2='18' y2='18' /%3E%3Cline x1='18' y1='2' x2='2' y2='18' /%3E%3C/svg%3E");
-    background-size: 10px 10px;
+    background-size: 15px 15px;
     background-repeat: no-repeat;
 }
 
@@ -1601,11 +1601,11 @@ body.is-preload #header .content .inner {
     }
 
     #main article .close:before {
-        top: 0.4375rem;
-        left: 0.4375rem;
-        width: 1.125rem;
-        height: 1.125rem;
-        background-size: 7px 7px;
+        top: 0.65625rem;
+        left: 0.65625rem;
+        width: 1.6875rem;
+        height: 1.6875rem;
+        background-size: 10.5px 10.5px;
     }
 
 }
@@ -1806,9 +1806,9 @@ body.is-preload #footer {
 }
 
 .filter-btn.active {
-    background: #ffffff;
-    color: #1b1f22;
-    border-color: #ffffff;
+    background: #235261;
+    color: #ffffff;
+    border-color: #235261;
 }
 
 .modal {
@@ -1858,7 +1858,7 @@ body.is-preload #footer {
     height: 2rem !important;
     z-index: 10001 !important;
     cursor: pointer !important;
-    background: rgba(0, 0, 0, 0.7) !important;
+    background: #161A1C !important;
     border-radius: 50% !important;
     display: flex !important;
     align-items: center !important;
