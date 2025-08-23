@@ -508,6 +508,116 @@
                         }
                     }
                 });
+
+                // Animate egg function
+                function animateEgg() {
+                    // Define the egg structure with fillable positions marked as 'o'
+                    const eggStructure = [
+                        '     XXXXXXX     ',
+                        '   XXXoooooXXX   ',
+                        '  XXoooooooooXX  ',
+                        ' XXoooooooooooXX ',
+                        'XXoooooooooooooXX',
+                        'XXoooooooooooooXX',
+                        'XXoooooooooooooXX',
+                        'XXoooooooooooooXX',
+                        'XXoooooooooooooXX',
+                        ' XXoooooooooooXX ',
+                        '  XXoooooooooXX  ',
+                        '   XXXoooooXXX   ',
+                        '     XXXXXXX     '
+                    ];
+
+                    // Characters to randomly fill with
+                    const fillChars = ['♦', '♠', '♣', '♥', '★', '◆', '●', '▲', '■', '♪', '☆', '◇', '○', '△', '□', '@', '#', '$', '%', '&', '*', '+', '=', '~'];
+                    
+                    // Create output div
+                    const outputDiv = document.createElement('div');
+                    outputDiv.className = 'output-text';
+                    outputDiv.style.whiteSpace = 'pre';
+                    outputDiv.style.fontFamily = 'monospace';
+                    terminalOutput.appendChild(outputDiv);
+
+                    // Get all fillable positions
+                    const fillablePositions = [];
+                    eggStructure.forEach((line, lineIndex) => {
+                        for (let charIndex = 0; charIndex < line.length; charIndex++) {
+                            if (line[charIndex] === 'o') {
+                                fillablePositions.push({ line: lineIndex, char: charIndex });
+                            }
+                        }
+                    });
+
+                    // Shuffle positions for random filling
+                    for (let i = fillablePositions.length - 1; i > 0; i--) {
+                        const j = Math.floor(Math.random() * (i + 1));
+                        [fillablePositions[i], fillablePositions[j]] = [fillablePositions[j], fillablePositions[i]];
+                    }
+
+                    // Start with empty egg (replace 'o' with spaces)
+                    let currentEgg = eggStructure.map(line => line.replace(/o/g, ' '));
+                    
+                    let animationIndex = 0;
+                    const animationSpeed = 50; // milliseconds between fills
+
+                    function updateEgg() {
+                        if (animationIndex < fillablePositions.length) {
+                            const pos = fillablePositions[animationIndex];
+                            const randomChar = fillChars[Math.floor(Math.random() * fillChars.length)];
+                            
+                            // Update the current egg structure
+                            const lineArray = currentEgg[pos.line].split('');
+                            lineArray[pos.char] = randomChar;
+                            currentEgg[pos.line] = lineArray.join('');
+                            
+                            // Update display
+                            outputDiv.textContent = currentEgg.join('\n');
+                            
+                            animationIndex++;
+                            setTimeout(updateEgg, animationSpeed);
+                        } else {
+                            // Animation complete, add new prompt
+                            const newPrompt = document.createElement('div');
+                            newPrompt.className = 'terminal-line';
+                            newPrompt.innerHTML = `<span class="cursor">_</span>`;
+                            terminalOutput.appendChild(newPrompt);
+                            
+                            // Scroll to bottom
+                            terminalOutput.scrollTop = terminalOutput.scrollHeight;
+                        }
+                    }
+
+                    // Start animation
+                    outputDiv.textContent = currentEgg.join('\n');
+                    setTimeout(updateEgg, animationSpeed);
+                }
+
+                // Show secret commands
+                function showSecretCommands() {
+                    // Remove cursor
+                    const cursor = document.querySelector('.cursor');
+                    if (cursor) cursor.remove();
+
+                    // Add the secret discovery message to terminal
+                    const commandLine = document.createElement('div');
+                    commandLine.className = 'terminal-line';
+                    commandLine.innerHTML = `<span class="command-prefix">&gt;Secret button discovered!</span>`;
+                    terminalOutput.appendChild(commandLine);
+
+                    const secretMessage = document.createElement('div');
+                    secretMessage.className = 'output-text';
+                    secretMessage.innerHTML = `Ah you found the secret button! Here are the hidden commands you can use: hire, coffee, quote, bossfight.`;
+                    terminalOutput.appendChild(secretMessage);
+
+                    // Add new prompt with cursor
+                    const newPrompt = document.createElement('div');
+                    newPrompt.className = 'terminal-line';
+                    newPrompt.innerHTML = `<span class="cursor">_</span>`;
+                    terminalOutput.appendChild(newPrompt);
+
+                    // Scroll to bottom
+                    terminalOutput.scrollTop = terminalOutput.scrollHeight;
+                }
             </script>
         </article>
 
@@ -642,19 +752,7 @@ Einfach Genial aGmbH (2021)
                     clear: 'CLEAR_TERMINAL',
                     hire: 'Permission granted 🚀 - you can now hire me!',
                     coffee: '☕ Brewing… done.',
-                    ei: '     XXXXXXX     \n' +
-                        '   XX       XX   \n' +
-                        '  X           X  \n' +
-                        ' X             X \n' +
-                        'X               X\n' +
-                        'X               X\n' +
-                        'X               X\n' +
-                        'X               X\n' +
-                        'X               X\n' +
-                        ' X             X \n' +
-                        '  X           X  \n' +
-                        '   XX       XX   \n' +
-                        '     XXXXXXX     ',
+                    ei: 'ANIMATE_EGG',
                     quote: '"Programs must be written for people to read, and only incidentally for machines to execute." — Harold Abelson.',
                     bossfight: `Tackling university as a career changer during Covid and endless online lectures. It wasn't easy, but it taught me how to throw myself into new problems and adapt quickly, learning to work efficiently in completely new environments.`,
                     exit: `Nice try! 😄
@@ -713,6 +811,9 @@ Try 'clear' instead to clean up the screen.`,
                             // Navigate to work section
                             document.querySelector('a[href="#intro"]').click();
                             return;
+                        } else if (commands[command] === 'ANIMATE_EGG') {
+                            animateEgg();
+                            return;
                         }
                         
                         const outputDiv = document.createElement('div');
@@ -758,6 +859,89 @@ Try 'clear' instead to clean up the screen.`,
                 document.querySelector('.terminal-body').addEventListener('click', () => {
                     terminalInput.focus();
                 });
+
+                // Animate egg function
+                function animateEgg() {
+                    // Define the egg structure with fillable positions marked as 'o'
+                    const eggStructure = [
+                        '     XXXXXXX     ',
+                        '   XXXoooooXXX   ',
+                        '  XXoooooooooXX  ',
+                        ' XXoooooooooooXX ',
+                        'XXoooooooooooooXX',
+                        'XXoooooooooooooXX',
+                        'XXoooooooooooooXX',
+                        'XXoooooooooooooXX',
+                        'XXoooooooooooooXX',
+                        ' XXoooooooooooXX ',
+                        '  XXoooooooooXX  ',
+                        '   XXXoooooXXX   ',
+                        '     XXXXXXX     '
+                    ];
+
+                    // Characters to randomly fill with
+                    const fillChars = ['♦', '♠', '♣', '♥', '★', '◆', '●', '▲', '■', '♪', '☆', '◇', '○', '△', '□', '@', '#', '$', '%', '&', '*', '+', '=', '~'];
+                    
+                    // Create output div
+                    const outputDiv = document.createElement('div');
+                    outputDiv.className = 'output-text';
+                    outputDiv.style.whiteSpace = 'pre';
+                    outputDiv.style.fontFamily = 'monospace';
+                    terminalOutput.appendChild(outputDiv);
+
+                    // Get all fillable positions
+                    const fillablePositions = [];
+                    eggStructure.forEach((line, lineIndex) => {
+                        for (let charIndex = 0; charIndex < line.length; charIndex++) {
+                            if (line[charIndex] === 'o') {
+                                fillablePositions.push({ line: lineIndex, char: charIndex });
+                            }
+                        }
+                    });
+
+                    // Shuffle positions for random filling
+                    for (let i = fillablePositions.length - 1; i > 0; i--) {
+                        const j = Math.floor(Math.random() * (i + 1));
+                        [fillablePositions[i], fillablePositions[j]] = [fillablePositions[j], fillablePositions[i]];
+                    }
+
+                    // Start with empty egg (replace 'o' with spaces)
+                    let currentEgg = eggStructure.map(line => line.replace(/o/g, ' '));
+                    
+                    let animationIndex = 0;
+                    const animationSpeed = 50; // milliseconds between fills
+
+                    function updateEgg() {
+                        if (animationIndex < fillablePositions.length) {
+                            const pos = fillablePositions[animationIndex];
+                            const randomChar = fillChars[Math.floor(Math.random() * fillChars.length)];
+                            
+                            // Update the current egg structure
+                            const lineArray = currentEgg[pos.line].split('');
+                            lineArray[pos.char] = randomChar;
+                            currentEgg[pos.line] = lineArray.join('');
+                            
+                            // Update display
+                            outputDiv.textContent = currentEgg.join('\n');
+                            
+                            animationIndex++;
+                            setTimeout(updateEgg, animationSpeed);
+                        } else {
+                            // Animation complete, add new prompt
+                            const newPrompt = document.createElement('div');
+                            newPrompt.className = 'terminal-line';
+                            newPrompt.innerHTML = `<span class="cursor">_</span>`;
+                            terminalOutput.appendChild(newPrompt);
+                            
+                            // Scroll to bottom
+                            terminalOutput.scrollTop = terminalOutput.scrollHeight;
+                        }
+                    }
+
+                    // Start animation
+                    outputDiv.textContent = currentEgg.join('\n');
+                    setTimeout(updateEgg, animationSpeed);
+                }
 
                 // Show secret commands
                 function showSecretCommands() {
@@ -1035,7 +1219,6 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
                             <td>Vitae integer tempus condimentum.</td>
                             <td>19.99</td>
                         </tr>
-                        <tr>
                             <td>Item Five</td>
                             <td>Ante turpis integer aliquet porttitor.</td>
                             <td>29.99</td>
