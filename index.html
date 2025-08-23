@@ -45,7 +45,9 @@
 
         <!-- Work -->
         <article id="intro">
-            <!-- Filter Controls above heading -->
+            <h2 class="major">Overview of my work</h2>
+            
+            <!-- Filter Controls below heading -->
             <div class="filter-controls">
                 <h4>Sort by type</h4>
                 <div class="filter-tags">
@@ -58,8 +60,6 @@
                     <button class="filter-btn" data-filter="commercial">Commercial</button>
                 </div>
             </div>
-            
-            <h2 class="major">Overview of my work</h2>
 
             <!-- Project Grid -->
             <div class="project-grid">
@@ -513,6 +513,11 @@
 
         <!-- About -->
         <article id="about">
+            <h2 class="major">About me</h2>
+            
+            <!-- Secret Button positioned in bottom right corner of About Me section background -->
+            <button class="secret-button" onclick="showSecretCommands()" title="Secret commands">?</button>
+            
             <div class="terminal">
                 <div class="terminal-header">
                     <div class="terminal-title">Command Prompt</div>
@@ -526,7 +531,7 @@
                     <div class="terminal-output" id="terminal-output">
                         <div class="output-text">
                             Welcome to my interactive portfolio terminal!<br>
-                            Type 'help' to see available commands or click the buttons below.
+                            Type 'help' to see available commands, click the buttons below or try out some commands yourself! Maybe you'll find some interesting info!<br>
                         </div>
                         <div class="terminal-line">
                             <span class="cursor">_</span>
@@ -539,7 +544,7 @@
                         <button class="terminal-shortcut" onclick="executeCommand('help')">help</button>
                         <button class="terminal-shortcut" onclick="executeCommand('whoami')">whoami</button>
                         <button class="terminal-shortcut" onclick="executeCommand('skills')">skills</button>
-                        <button class="terminal-shortcut" onclick="executeCommand('projects')">projects</button>
+                        <button class="terminal-shortcut" onclick="executeCommand('experience')">experience</button>
                         <button class="terminal-shortcut" onclick="executeCommand('contact')">contact</button>
                         <button class="terminal-shortcut" onclick="executeCommand('clear')">clear</button>
                     </div>
@@ -565,7 +570,11 @@
   clear      - Clear the terminal
   exit       - Close terminal (joke command)`,
 
-                    whoami: `Tayfun Akincir - XR Software Developer
+                    whoami: `<img src="images/about1.jpg" style="max-width: 700px;   
+    width: 100%; border-radius: 8px; display: block;        
+    margin: 20px auto; object-fit: cover;">                 
+
+Tayfun Akincir - XR Software Developer
 
 Hi, I'm Tayfun - a software developer based in Germany with 5 years of 
 experience in innovative projects. I specialize in C# programming, 
@@ -630,21 +639,14 @@ Einfach Genial aGmbH (2021)
    Focus: Virtual Reality, Game Development
    Thesis: "VR-Triage Prototype for Emergency Medical Care"`,
 
-                    languages: `Programming Languages & Proficiency:
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-C#        ████████████████████ Expert (5 years)
-C++       ████████████████     Advanced (3 years)
-Python    ████████████         Intermediate (2 years)
-JavaScript████████             Intermediate (2 years)
-HLSL      ██████               Basic (Shaders)`,
-
                     clear: 'CLEAR_TERMINAL',
-
+                    hire: 'Permission granted 🚀 - you can now hire me!',
+                    coffee: '☕ Brewing… done.',
+                    quote: '"Programs must be written for people to read, and only incidentally for machines to execute." — Harold Abelson.',
+                    bossfight: `Tackling university as a career changer during Covid and endless online lectures. It wasn't easy, but it taught me how to throw myself into new problems and adapt quickly, learning to work efficiently in completely new environments.`,
                     exit: `Nice try! 😄
 This is a web terminal - there's no escape!
 Try 'clear' instead to clean up the screen.`,
-
-                    intro: 'NAVIGATE_TO_WORK'
                 };
 
                 // Initialize terminal
@@ -723,6 +725,10 @@ Try 'clear' instead to clean up the screen.`,
 
                 function clearTerminal() {
                     terminalOutput.innerHTML = `
+                        <div class="output-text">
+                            Welcome to my interactive portfolio terminal!<br>
+                            Type 'help' to see available commands, click the buttons below or try out some commands yourself! Maybe you'll find some interesting info!<br>
+                        </div>
                         <div class="terminal-line">
                             <span class="cursor">_</span>
                         </div>
@@ -733,6 +739,33 @@ Try 'clear' instead to clean up the screen.`,
                 document.querySelector('.terminal-body').addEventListener('click', () => {
                     terminalInput.focus();
                 });
+
+                // Show secret commands
+                function showSecretCommands() {
+                    // Remove cursor
+                    const cursor = document.querySelector('.cursor');
+                    if (cursor) cursor.remove();
+
+                    // Add the secret discovery message to terminal
+                    const commandLine = document.createElement('div');
+                    commandLine.className = 'terminal-line';
+                    commandLine.innerHTML = `<span class="command-prefix">&gt;Secret button discovered!</span>`;
+                    terminalOutput.appendChild(commandLine);
+
+                    const secretMessage = document.createElement('div');
+                    secretMessage.className = 'output-text';
+                    secretMessage.innerHTML = `Ah you found the secret button! Here are the hidden commands you can use: hire, coffee, quote, bossfight.`;
+                    terminalOutput.appendChild(secretMessage);
+
+                    // Add new prompt with cursor
+                    const newPrompt = document.createElement('div');
+                    newPrompt.className = 'terminal-line';
+                    newPrompt.innerHTML = `<span class="cursor">_</span>`;
+                    terminalOutput.appendChild(newPrompt);
+
+                    // Scroll to bottom
+                    terminalOutput.scrollTop = terminalOutput.scrollHeight;
+                }
             </script>
         </article>
 
