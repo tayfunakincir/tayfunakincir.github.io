@@ -1601,16 +1601,17 @@ body.is-preload #header .content .inner {
     border-radius: 100%;
     background-position: center;
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='20px' height='20px' viewBox='0 0 20 20' zoomAndPan='disable'%3E%3Cstyle%3Eline %7B stroke: %23ffffff%3B stroke-width: 1%3B %7D%3C/style%3E%3Cline x1='2' y1='2' x2='18' y2='18' /%3E%3Cline x1='18' y1='2' x2='2' y2='18' /%3E%3C/svg%3E");
+    background-color: #fa4c43;
     background-size: 15px 15px;
     background-repeat: no-repeat;
 }
 
 #main article .close:hover:before {
-    background-color: rgba(255, 255, 255, 0.075);
+    background-color: #ff3429;
 }
 
 #main article .close:active:before {
-    background-color: rgba(255, 255, 255, 0.175);
+    background-color: #ff3429;
 }
 
 @media screen and (max-width: 736px) {
@@ -1893,7 +1894,8 @@ body.modal-open {
     height: 2rem !important;
     z-index: 10001 !important;
     cursor: pointer !important;
-    background: #161A1C !important;
+    background: #ff5f56 !important;
+    border: none !important;
     border-radius: 50% !important;
     display: flex !important;
     align-items: center !important;
@@ -1902,12 +1904,10 @@ body.modal-open {
     color: #ffffff !important;
     transition: all 0.3s ease !important;
     text-decoration: none !important;
-    border: 2px solid rgba(255, 255, 255, 0.3) !important;
 }
 
 .modal .close:hover {
-    background: rgba(255, 255, 255, 0.2) !important;
-    border-color: rgba(255, 255, 255, 0.6) !important;
+    background: #ff4136 !important;
     transform: scale(1.1) !important;
 }
 
@@ -1949,10 +1949,6 @@ body.modal-open {
     height: 12px;
     border-radius: 50%;
     display: block;
-}
-
-.terminal-btn.close {
-    background: #ff5f56;
 }
 
 .terminal-btn.minimize {
@@ -2153,7 +2149,7 @@ body.modal-open {
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.1);
     color: #ffffff;
-    font-size: 0.7rem;
+    font-size: 1.0rem;
     font-weight: bold;
     cursor: pointer;
     opacity: 0.005;
