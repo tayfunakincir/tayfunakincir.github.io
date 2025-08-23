@@ -1773,35 +1773,43 @@ body.is-preload #footer {
 
 /* Filter Controls */
 .filter-controls {
-    margin: 3rem 0 2rem 0;
-    text-align: center;
+    margin: 0 0 1.5rem 0;
+    text-align: left;
 }
 
 .filter-controls h4 {
-    margin-bottom: 1rem;
-    color: rgba(255, 255, 255, 0.8);
+    display: block;
+    font-weight: bold;
+    font-size: 0.6rem;
+    margin: 0 0 0.5rem 0;
+    color: #ffffff;
 }
 
 .filter-tags {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.5rem;
+    justify-content: flex-start;
+    gap: 0.25rem;
 }
 
 .filter-btn {
     background: transparent;
     border: 1px solid rgba(255, 255, 255, 0.3);
     color: #ffffff;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
+    padding: 0 0.4rem;
+    border-radius: 8px;
     cursor: pointer;
     transition: all 0.3s ease;
-    font-size: 0.8rem;
+    font-size: 0.6rem;
+    white-space: nowrap;
+    height: 1.2rem;
+    line-height: 1.2rem;
+    display: inline-flex;
+    align-items: center;
 }
 
 .filter-btn:hover {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.075);
     border-color: rgba(255, 255, 255, 0.5);
 }
 
@@ -1809,6 +1817,14 @@ body.is-preload #footer {
     background: #235261;
     color: #ffffff;
     border-color: #235261;
+}
+
+/* Remove old work-header styles that are no longer needed */
+
+/* Prevent body scroll when modal is open */
+body.modal-open {
+    overflow: hidden !important;
+    height: 100vh !important;
 }
 
 .modal {
@@ -1874,10 +1890,4 @@ body.is-preload #footer {
     background: rgba(255, 255, 255, 0.2) !important;
     border-color: rgba(255, 255, 255, 0.6) !important;
     transform: scale(1.1) !important;
-}
-
-/* Prevent body scroll when modal is open */
-body.modal-open {
-    overflow: hidden !important;
-    height: 100vh !important;
 }
