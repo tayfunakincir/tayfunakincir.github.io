@@ -513,18 +513,227 @@
 
         <!-- About -->
         <article id="about">
-            <h2 class="major">About Me</h2>
-            <span class="image main"><img src="images/about1.jpg" alt="" /></span>
-            <p><b>Hi, I'm Tayfun - a software developer based in Germany looking for new opportunities to use my 5 years of experience for new innovative projects.<br>I appreciate your curiosity about myself and I hope I can provide some insight about what you could expect from me.</b></p>
-            <p>As an experienced software developer, my focus centers on programming in C#, particularly in the areas of <b>Unity</b> and <b>Virtual Reality</b>. Additionally, I have some knowledge in development with C++, Unreal Engine and Augmented Reality.</p>
-            <p>During my studies, part-time work for a hospital and at Litexa GmbH, I successfully implemented various process flows interactively in Virtual Reality. Through these experiences, I was able to further develop my <b>technical skills</b> and gain a deep understanding of applying these technologies in various industries.</p>
-            <p>My abilities are particularly outstanding in <b>handling multiplayer integration</b> in Unity using the Fusion framework, as well as my expertise in designing Virtual Reality applications.</p>
-            <p>My personal strengths lie in carefully handling complex issues, finding efficient and future-proof solutions and <b>team-oriented collaboration</b> in project teams. I am known for actively contributing to achieving common goals and delivering outstanding results. I have extensive experience in <b>leading projects</b> and organizing workflows within small teams. I emphasize on <b>efficient task delegation</b>, clear communication, and meeting project milestones on time. I excel at creating structured plans that <b>optimize team performance</b> and drive successful outcomes.</p>
-            <p>If you want a summarised version of what you have read on this website, here is my profile as a PDF document available in <b><a href="https://1drv.ms/b/c/cdbca53e5a3fb05c/EWmzWYWCLbxCmkCaaHeXiZwBoDOLhltOSJJQVxoRHSAlUw?e=ycfK5B" target="_blank" rel="noopener noreferrer">ENGLISH</a></b> and <b><a href="https://1drv.ms/b/c/cdbca53e5a3fb05c/EchP13RHF-VCv-RP51euTOUBnT44kpkIkfVYZ6IAyQJ47Q?e=8RVaa3" target="_blank" rel="noopener noreferrer">GERMAN</a></b>.</p>
-            <ul class="icons">
-                <li><a href="https://www.linkedin.com/in/tayfun-akincir/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-                <li><a href="mailto:tayfunakincir@gmail.com" class="icon classic fa-envelope"><span class="label">Email</span></a></li>
-            </ul>
+            <div class="terminal">
+                <div class="terminal-header">
+                    <div class="terminal-title">Command Prompt</div>
+                    <div class="terminal-buttons">
+                        <span class="terminal-btn close"></span>
+                        <span class="terminal-btn minimize"></span>
+                        <span class="terminal-btn maximize"></span>
+                    </div>
+                </div>
+                <div class="terminal-body">
+                    <div class="terminal-output" id="terminal-output">
+                        <div class="output-text">
+                            Welcome to my interactive portfolio terminal!<br>
+                            Type 'help' to see available commands or click the buttons below.
+                        </div>
+                        <div class="terminal-line">
+                            <span class="cursor">_</span>
+                        </div>
+                    </div>
+                    <div class="terminal-input-container">
+                        <input type="text" class="terminal-input" id="terminal-input" placeholder="Type a command..." autocomplete="off">
+                    </div>
+                    <div class="terminal-shortcuts">
+                        <button class="terminal-shortcut" onclick="executeCommand('help')">help</button>
+                        <button class="terminal-shortcut" onclick="executeCommand('whoami')">whoami</button>
+                        <button class="terminal-shortcut" onclick="executeCommand('skills')">skills</button>
+                        <button class="terminal-shortcut" onclick="executeCommand('projects')">projects</button>
+                        <button class="terminal-shortcut" onclick="executeCommand('contact')">contact</button>
+                        <button class="terminal-shortcut" onclick="executeCommand('clear')">clear</button>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+                const terminalInput = document.getElementById('terminal-input');
+                const terminalOutput = document.getElementById('terminal-output');
+                let commandHistory = [];
+                let historyIndex = -1;
+
+                // Command data
+                const commands = {
+                    help: `Available commands:
+  whoami     - Learn about me
+  skills     - View my technical skills
+  projects   - See my project highlights
+  contact    - Get my contact information
+  experience - View my work experience
+  education  - See my educational background
+  languages  - Programming languages I use
+  clear      - Clear the terminal
+  exit       - Close terminal (joke command)`,
+
+                    whoami: `Tayfun Akincir - XR Software Developer
+
+Hi, I'm Tayfun - a software developer based in Germany with 5 years of 
+experience in innovative projects. I specialize in C# programming, 
+particularly in Unity and Virtual Reality development.
+
+I'm passionate about creating immersive experiences and solving complex 
+technical challenges in VR/AR applications.`,
+
+                    skills: `Technical Skills:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Languages:     C#, C++, Python, JavaScript
+Engines:       Unity3D, Unreal Engine
+VR/AR:         SteamVR, XR Toolkit, HurricaneVR
+Networking:    Photon Fusion, Multiplayer Systems
+Tools:         Git, Visual Studio, Blender
+Frameworks:    VRIK, ProBuilder, Antilatency
+Platforms:     Windows, VR Headsets (Quest, Vive)`,
+
+                    projects: `Recent Project Highlights:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🎮 Arcane Arsenal (2024)
+   → Network replication prototype with C++ in Unreal Engine
+
+🏠 VR House Designer (2024)
+   → Collaborative VR furnishing application with multiplayer
+
+🤖 Antilatency Showroom (2023-2024)
+   → Body tracking showroom with VRIK and multiplayer integration
+
+🏥 VR-Triage Prototype (2022)
+   → Emergency medical care simulation (Bachelor Thesis)
+
+Type 'intro' to go back to the work section for detailed project info.`,
+
+                    contact: `Contact Information:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📧 Email:    tayfunakincir@gmail.com
+💼 LinkedIn: linkedin.com/in/tayfun-akincir/
+📍 Location: Ludwigshafen, Germany
+
+Feel free to reach out for collaboration opportunities or job offers!`,
+
+                    experience: `Work Experience:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Litexa GmbH (2023-2024)
+→ XR Software Developer
+→ VR application development, multiplayer integration
+
+Universitätsklinikum Heidelberg (2022)
+→ VR Developer (Bachelor Thesis)
+→ Medical simulation development
+
+Einfach Genial aGmbH (2021)
+→ VR Developer
+→ Commercial VR training applications`,
+
+                    education: `Education:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🎓 Bachelor of Science in Computer Science
+   SRH Hochschule Heidelberg (2019-2022)
+   
+   Focus: Virtual Reality, Game Development
+   Thesis: "VR-Triage Prototype for Emergency Medical Care"`,
+
+                    languages: `Programming Languages & Proficiency:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+C#        ████████████████████ Expert (5 years)
+C++       ████████████████     Advanced (3 years)
+Python    ████████████         Intermediate (2 years)
+JavaScript████████             Intermediate (2 years)
+HLSL      ██████               Basic (Shaders)`,
+
+                    clear: 'CLEAR_TERMINAL',
+
+                    exit: `Nice try! 😄
+This is a web terminal - there's no escape!
+Try 'clear' instead to clean up the screen.`,
+
+                    intro: 'NAVIGATE_TO_WORK'
+                };
+
+                // Initialize terminal
+                terminalInput.addEventListener('keydown', handleKeyDown);
+                terminalInput.focus();
+
+                function handleKeyDown(event) {
+                    if (event.key === 'Enter') {
+                        const command = terminalInput.value.trim().toLowerCase();
+                        if (command) {
+                            executeCommand(command);
+                            commandHistory.push(command);
+                            historyIndex = commandHistory.length;
+                        }
+                        terminalInput.value = '';
+                    } else if (event.key === 'ArrowUp') {
+                        event.preventDefault();
+                        if (historyIndex > 0) {
+                            historyIndex--;
+                            terminalInput.value = commandHistory[historyIndex];
+                        }
+                    } else if (event.key === 'ArrowDown') {
+                        event.preventDefault();
+                        if (historyIndex < commandHistory.length - 1) {
+                            historyIndex++;
+                            terminalInput.value = commandHistory[historyIndex];
+                        } else {
+                            historyIndex = commandHistory.length;
+                            terminalInput.value = '';
+                        }
+                    }
+                }
+
+                function executeCommand(command) {
+                    // Remove cursor
+                    const cursor = document.querySelector('.cursor');
+                    if (cursor) cursor.remove();
+
+                    // Add command with new format: ">Command: [command]" in #16AFD9 and bold
+                    const commandLine = document.createElement('div');
+                    commandLine.className = 'terminal-line';
+                    commandLine.innerHTML = `<span class="command-prefix">&gt;Command: [${command}]</span>`;
+                    terminalOutput.appendChild(commandLine);
+
+                    // Process command
+                    if (commands[command]) {
+                        if (commands[command] === 'CLEAR_TERMINAL') {
+                            clearTerminal();
+                            return;
+                        } else if (commands[command] === 'NAVIGATE_TO_WORK') {
+                            // Navigate to work section
+                            document.querySelector('a[href="#intro"]').click();
+                            return;
+                        }
+                        
+                        const outputDiv = document.createElement('div');
+                        outputDiv.className = 'output-text';
+                        outputDiv.innerHTML = commands[command].replace(/\n/g, '<br>');
+                        terminalOutput.appendChild(outputDiv);
+                    } else {
+                        const errorDiv = document.createElement('div');
+                        errorDiv.className = 'output-text error';
+                        errorDiv.innerHTML = `Command not found: ${command}<br>Type 'help' for available commands.`;
+                        terminalOutput.appendChild(errorDiv);
+                    }
+
+                    // Add new prompt with cursor (only cursor, no prompt text)
+                    const newPrompt = document.createElement('div');
+                    newPrompt.className = 'terminal-line';
+                    newPrompt.innerHTML = `<span class="cursor">_</span>`;
+                    terminalOutput.appendChild(newPrompt);
+
+                    // Scroll to bottom
+                    terminalOutput.scrollTop = terminalOutput.scrollHeight;
+                }
+
+                function clearTerminal() {
+                    terminalOutput.innerHTML = `
+                        <div class="terminal-line">
+                            <span class="cursor">_</span>
+                        </div>
+                    `;
+                }
+
+                // Auto-focus input when clicking in terminal
+                document.querySelector('.terminal-body').addEventListener('click', () => {
+                    terminalInput.focus();
+                });
+            </script>
         </article>
 
         <!-- Contact -->
