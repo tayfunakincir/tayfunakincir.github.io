@@ -11,6 +11,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <style>
+        .demo-btn-wrapper img.uc-overlay {
+            opacity: 0.2;
+            transition: opacity 0.3s ease;
+        }
+        .demo-btn-wrapper:hover img.uc-overlay {
+            opacity: 1.0;
+        }
+        .modal-content .image:before {
+            display: none;
+        }
+    </style>
 </head>
 <body class="is-preload">
 
@@ -32,7 +44,15 @@
         <nav>
             <ul>
                 <li><a href="#intro">Work</a></li>
-                <li><a href="webgl/index.html">Demo</a></li>
+                <li class="demo-btn-wrapper" style="position: relative; display: inline-block;">
+                    <!--<a href="webgl/index.html">Demo</a>-->
+                    <a href="#">Demo</a>
+                    <img src="images/underconstruction.png" alt="Under Construction"
+                         class="uc-overlay"
+                         style="position: absolute; top: 50%; left: 50%;
+                transform: translate(-50%, -50%);
+                width: 100%; pointer-events: none; z-index: 10;">
+                </li>
                 <li><a href="#about">About</a></li>
                 <!--<li><a href="#contact">Contact</a></li>-->
                 <!--<li><a href="#elements">Elements</a></li>-->
@@ -63,6 +83,47 @@
 
             <!-- Project Grid -->
             <div class="project-grid">
+
+                <!-- GBCity Experience -->
+                <div class="project-card" onclick="showProjectDetails('project13')">
+                    <div class="project-image">
+                        <img src="images/work13.jpg" alt="GBCity Experience" />
+                        <div class="project-overlay">
+                            <div class="project-year">2025</div>
+                            <div class="project-tech">Unity • C# • VR</div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>GBCity Experience</h3>
+                        <p class="project-summary">Multiplayer VR product configurator for Goldbeck</p>
+                        <div class="project-tags">
+                            <span class="tag">Multiplayer</span>
+                            <span class="tag">Unity</span>
+                            <span class="tag">Commercial</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Goal King -->
+                <div class="project-card" onclick="showProjectDetails('project12')">
+                    <div class="project-image">
+                        <img src="images/work12.jpg" alt="Goal King" />
+                        <div class="project-overlay">
+                            <div class="project-year">2025</div>
+                            <div class="project-tech">Unity • C# • VR</div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Goal King</h3>
+                        <p class="project-summary">Published VR sports title available on Meta Quest & Pico</p>
+                        <div class="project-tags">
+                            <span class="tag">Multiplayer</span>
+                            <span class="tag">Unity</span>
+                            <span class="tag">Commercial</span>
+                        </div>
+                    </div>
+                </div>
+                
                 <!-- Arcane Arsenal -->
                 <div class="project-card" onclick="showProjectDetails('project1')">
                     <div class="project-image">
@@ -96,6 +157,7 @@
                         <p class="project-summary">Collaborative VR furnishing application</p>
                         <div class="project-tags">
                             <span class="tag">VR</span>
+                            <span class="tag">Commercial</span>
                             <span class="tag">Collaboration</span>
                         </div>
                     </div>
@@ -115,6 +177,7 @@
                         <p class="project-summary">Body tracking showroom with multiplayer support</p>
                         <div class="project-tags">
                             <span class="tag">Body Tracking</span>
+                            <span class="tag">Commercial</span>
                             <span class="tag">Multiplayer</span>
                         </div>
                     </div>
@@ -276,146 +339,171 @@
             <script>
                 // Project details data
                 const projectDetails = {
+
+                    project13: {
+                        title: "GBCity Experience - 2025",
+                        description: "Multiplayer VR product configurator developed for Goldbeck, allowing multiple users to collaboratively explore and customise Goldbeck's modular building solutions in real time. Implemented multiplayer synchronisation using Unity Netcode for GameObjects. Features an Operator-User system, where an operator monitors and controls the users' VR experience via a Windows tablet.",
+                        image: "images/work13.jpg",
+                        details: [
+                            "<b>Organisation:</b> Fansea GmbH",
+                            "<b>Tech Stack:</b> Unity, C#, Netcode for Gameobjects",
+                            "<b>My Role:</b> Multiplayer integration, VR interaction, feature integration",
+                            "<b>Team Size:</b> 6",
+                            "<b>Development Time:</b> 1 year"
+                        ],
+                    },
+                    project12: {
+                        title: "Goal King - 2025",
+                        description: "Commercially released VR title available on Meta Quest and Pico stores. Responsible for converting the existing Unreal Engine codebase to Unity, implementing VR interaction systems, and ongoing feature integration as part of a 3-person team at Fansea.",
+                        image: "images/work12.jpg",
+                        details: [
+                            "<b>Organisation:</b> Fansea GmbH",
+                            "<b>Tech Stack:</b> Unity, C#",
+                            "<b>My Role:</b> Unreal → Unity conversion, VR interaction, feature integration",
+                            "<b>Team Size:</b> 3",
+                            "<b>Development Time:</b> Ongoing"
+                        ],
+                        video: "https://scontent-fra3-1.oculuscdn.com/...",
+                        metaLink: "https://www.oculus.com/experiences/quest/4996190722252225/",
+                        picoLink: "https://store-global.picoxr.com/global/detail/1/7480434548917010437"
+                    },
                     project1: {
                         title: "Arcane Arsenal - 2024",
-                        description: "Prototype to implement replication and other network functions with C++, as well as testing blueprints and their performance",
+                        description: "Unreal Engine multiplayer prototype implementing C++ network replication, RPCs, and Blueprint performance benchmarking.",
                         image: "images/work1.jpg",
                         details: [
-                            "<b>Location:</b> Litexa GmbH",
-                            "<b>Environment:</b> Unreal Engine",
-                            "<b>Used language:</b> C++",
-                            "<b>Teamsize:</b> Solo Development",
-                            "<b>Development time:</b> 1 month"
+                            "<b>Organisation:</b> Litexa GmbH",
+                            "<b>Tech Stack:</b> Unreal Engine, C++, Blueprints",
+                            "<b>Team Size:</b> Solo",
+                            "<b>Development Time:</b> 1 month"
                         ],
                         video: "https://1drv.ms/v/c/cdbca53e5a3fb05c/EY7gbNFVTrNIhlAey146DDEBfMN-eoCTO1k5UKJJCpKDZg?e=u0uQU5"
                     },
                     project2: {
                         title: "VR House Designer - 2024",
-                        description: "Virtual reality house designer with collaborative furnishing options",
+                        description: "Collaborative VR application allowing multiple users to design and furnish rooms in real time. Implemented multiplayer synchronisation via Photon Fusion and VR interaction systems using HurricaneVR.",
                         image: "images/work2.jpg",
                         details: [
-                            "<b>Location:</b> Litexa GmbH",
-                            "<b>Environment:</b> Unity3D, HurricaneVR, Photon Fusion, VRIK",
-                            "<b>Used language:</b> C#",
-                            "<b>Teamsize:</b> 3",
-                            "<b>Development time:</b> 3 months"
+                            "<b>Organisation:</b> Litexa GmbH",
+                            "<b>Tech Stack:</b> Unity3D, C#, HurricaneVR, Photon Fusion, VRIK",
+                            "<b>My Role:</b> Multiplayer integration, VR interaction, Programming Lead",
+                            "<b>Team Size:</b> 3",
+                            "<b>Development Time:</b> 3 months"
                         ],
                         video: "https://1drv.ms/v/c/cdbca53e5a3fb05c/EY4GiQKe53hCsaD9hPWqS3MBCSCAkW6I1vC4jNSsQ1vnjg?e=QvDB4A"
                     },
                     project3: {
                         title: "Antilatency Showroom - 2023/2024",
-                        description: "Showroom software for antilatency body tracking with VRIK and multiplayer integration",
+                        description: "Commercial showroom application demonstrating full-body tracking via the Antilatency SDK and VRIK, with multiplayer support for simultaneous multi-user tracking sessions.",
                         image: "images/work3.jpg",
                         details: [
-                            "<b>Location:</b> Litexa GmbH",
-                            "<b>Environment:</b> Unity3D, HurricaneVR, Photon Fusion, VRIK",
-                            "<b>Used language:</b> C#",
-                            "<b>Teamsize:</b> 3",
-                            "<b>Development time:</b> 1 year"
+                            "<b>Organisation:</b> Litexa GmbH",
+                            "<b>Tech Stack:</b> Unity3D, C#, HurricaneVR, Photon Fusion, VRIK, Antilatency SDK",
+                            "<b>My Role:</b>  Multiplayer integration, Body tracking integration, VR interaction, Programming Lead",
+                            "<b>Team Size:</b> 3",
+                            "<b>Development Time:</b> 1 year"
                         ],
                         video: "https://1drv.ms/v/c/cdbca53e5a3fb05c/EZIeY6WflpBGl0gnzr3bb0IBJ2TlPem4K-AtoaiFaqGo0Q?e=WHsjNw"
                     },
                     project4: {
                         title: "Procedural Mesh Generation - 2023",
-                        description: "Procedural Mesh Generation as part of a house design editor",
+                        description: "Runtime procedural mesh generation system for a VR house editor, utilising Unity's Simple & Advanced Mesh APIs and the ProBuilder API to dynamically build geometry based on user input.",
                         image: "images/work4.jpg",
                         details: [
-                            "<b>Location:</b> Litexa GmbH",
-                            "<b>Environment:</b> Unity3D, Simple- und Advanced Mesh API, Probuilder API",
-                            "<b>Used language:</b> C#",
-                            "<b>Teamsize:</b> Solo Development",
-                            "<b>Development time:</b> 1 month"
+                            "<b>Organisation:</b> Litexa GmbH",
+                            "<b>Tech Stack:</b> Unity3D, C#, Simple & Advanced Mesh API, ProBuilder API",
+                            "<b>Team Size:</b> Solo",
+                            "<b>Development Time:</b> 1 month"
                         ],
                         video: "https://1drv.ms/v/c/cdbca53e5a3fb05c/EbXi_2ua2ktJrnL6PFaBZFcBE-xvH2_E6IKbyjMCm1yFCg?e=RorroL"
                     },
                     project5: {
-                        title: "VR-Triage Prototype for emergency medical clinical care - 2022",
-                        description: "Process illustration of triaging in an emergency room<br>Developed as part of my bachelor thesis",
+                        title: "VR-Triage Prototype - 2022",
+                        description: "VR training simulation for emergency room triage procedures, developed as a solo bachelor thesis project in collaboration with Universitätsklinikum Heidelberg.",
                         image: "images/work5.jpg",
                         details: [
-                            "<b>Location:</b> Universitätsklinikum Heidelberg",
-                            "<b>Environment:</b> Unity3D, SteamVR",
-                            "<b>Used language:</b> C#",
-                            "<b>Teamsize:</b> Solo Development",
-                            "<b>Development time:</b> 4 months"
+                            "<b>Organisation:</b> Universitätsklinikum Heidelberg",
+                            "<b>Tech Stack:</b> Unity3D, C#, SteamVR",
+                            "<b>Team Size:</b> Solo",
+                            "<b>Development Time:</b> 4 months"
                         ],
                         video: "https://1drv.ms/v/c/cdbca53e5a3fb05c/ES7_bkB_8mZLlIdyDlcUWtwBAd2W3-RXWXnCAb0dsqchEQ?e=gft78b",
                         thesis: "https://www.dropbox.com/s/3c88v03o6eyj2if/BA_Thesis_TAYFUN_AKINCIR.pdf?dl=0"
                     },
                     project6: {
                         title: "VRex: Virtual Paleontology - 2022",
-                        description: "Serious Game made as an interactive depiction of work processes in paleontology",
+                        description: "Educational serious game simulating paleontological fieldwork, developed in a team of 7. Contributed to VR interaction design and core gameplay systems.",
                         image: "images/work6.jpg",
                         details: [
-                            "<b>Location:</b> SRH Hochschule Heidelberg",
-                            "<b>Environment:</b> Unity3D, SteamVR",
-                            "<b>Used language:</b> C#",
-                            "<b>Teamsize:</b> 7",
-                            "<b>Development time:</b> 4 months"
+                            "<b>Organisation:</b> SRH Hochschule Heidelberg",
+                            "<b>Tech Stack:</b> Unity3D, C#, SteamVR",
+                            "<b>My Role:</b> VR interaction, feature integration, Programming Lead",
+                            "<b>Team Size:</b> 7",
+                            "<b>Development Time:</b> 4 months"
                         ],
                         video: "https://1drv.ms/v/c/cdbca53e5a3fb05c/EVhWCvYvmDpEuTIhvI14m2YB4_0f7e1JrEp5X_cUnThhZg?e=Dzw25d"
                     },
                     project7: {
-                        title: "An Overview of User Interface and Interaction Design Patterns for VR, AR, and MR Applications - 2022",
-                        description: "paper containing an overview of over 200 patterns found in collections on several websites",
+                        title: "UI & Interaction Design Patterns for VR, AR, and MR - 2022",
+                        description: "Published academic paper cataloguing 200+ UI/UX design patterns for VR, AR, and MR applications. Presented at MuC 2022 (Mensch und Computer).",
                         image: "images/work11.jpg",
                         details: [
                             "<b>DOI:</b> 10.18420/muc2022-mci-ws06-419",
-                            "<b>Release:</b> September 2022",
+                            "<b>Published:</b> September 2022",
                             "<b>Authorship:</b> 2nd author",
-                            "<b>Note:</b> Based on my research work, which originally also contains norms and guidelines."
+                            "<b>Note:</b> Based on original research also covering UX norms and guidelines."
                         ],
                         paper: "https://www.researchgate.net/publication/363263265_An_Overview_of_User_Interface_and_Interaction_Design_Patterns_for_VR_AR_and_MR_Applications"
                     },
                     project8: {
                         title: "Rossmann VR - 2021",
-                        description: "An interactive presentation of everyday working life at Rossmann",
+                        description: "Commercial VR experience showcasing workplace scenarios at Rossmann, designed for recruitment and employer branding. Delivered within 1 month as a 2-person team.",
                         image: "images/work7.jpg",
                         details: [
-                            "<b>Location:</b> Einfach Genial aGmbH",
-                            "<b>Environment:</b> Unity3D, SteamVR",
-                            "<b>Used language:</b> C#",
-                            "<b>Teamsize:</b> 2",
-                            "<b>Development time:</b> 1 month"
+                            "<b>Client:</b> Rossmann (via Einfach Genial aGmbH)",
+                            "<b>Tech Stack:</b> Unity3D, C#, SteamVR",
+                            "<b>My Role:</b> VR interaction, feature integration",
+                            "<b>Team Size:</b> 2",
+                            "<b>Development Time:</b> 1 month"
                         ],
                         video: "https://1drv.ms/v/c/cdbca53e5a3fb05c/EdwzeGHspGFCoXQwr5QTsecBsxEis7uhuJij9iTroG_YPA?e=qcEDqZ"
                     },
                     project9: {
                         title: "KIND VR - 2021",
-                        description: "An interactive presentation of everyday working life at KIND",
+                        description: "Commercial VR onboarding experience for hearing care specialists KIND, built back-to-back with the Rossmann project — demonstrating efficient reuse of VR systems across clients.",
                         image: "images/work8.jpg",
                         details: [
-                            "<b>Location:</b> Einfach Genial aGmbH",
-                            "<b>Environment:</b> Unity3D, SteamVR",
-                            "<b>Used language:</b> C#",
-                            "<b>Teamsize:</b> 2",
-                            "<b>Development time:</b> 1 month"
+                            "<b>Client:</b> KIND (via Einfach Genial aGmbH)",
+                            "<b>Tech Stack:</b> Unity3D, C#, SteamVR",
+                            "<b>My Role:</b> VR interaction, feature integration",
+                            "<b>Team Size:</b> 2",
+                            "<b>Development Time:</b> 1 month"
                         ],
                         video: "https://1drv.ms/v/c/cdbca53e5a3fb05c/EVeZrDTDReROlVZrzcXlATAB6y1M0CKlOqARlS_FV774aA?e=QbRRbQ"
                     },
                     project10: {
                         title: "University Recipes - 2020/2021",
-                        description: "Humorous cooking simulation for students in VR",
+                        description: "Lighthearted VR cooking simulation built with a team of 6, exploring XR Interaction Toolkit mechanics and physics-based object interaction.",
                         image: "images/work9.jpg",
                         details: [
-                            "<b>Location:</b> SRH Hochschule Heidelberg",
-                            "<b>Environment:</b> Unity3D, XR Interaction Toolkit",
-                            "<b>Used language:</b> C#",
-                            "<b>Teamsize:</b> 6",
-                            "<b>Development time:</b> 3 months"
+                            "<b>Organisation:</b> SRH Hochschule Heidelberg",
+                            "<b>Tech Stack:</b> Unity3D, C#, XR Interaction Toolkit",
+                            "<b>My Role:</b> VR interaction, feature integration, Programming Lead",
+                            "<b>Team Size:</b> 6",
+                            "<b>Development Time:</b> 3 months"
                         ],
                         video: "https://1drv.ms/v/c/cdbca53e5a3fb05c/EcplHZ343z9DuLbqCH-y5UABuwYG1103MmpEcTtLmv7sbA?e=g7ZPKq"
                     },
                     project11: {
                         title: "Blade Gunner - 2020",
-                        description: "University project that is thematically based on the classic \"Gauntlet\"",
+                        description: "Top-down action game inspired by the arcade classic Gauntlet, developed in C++ with Raylib as a 5-person university project.",
                         image: "images/work10.jpg",
                         details: [
-                            "<b>Location:</b> SRH Hochschule Heidelberg",
-                            "<b>Environment:</b> Raylib",
-                            "<b>Used language:</b> C++",
-                            "<b>Teamsize:</b> 5",
-                            "<b>Development time:</b> 3 months"
+                            "<b>Organisation:</b> SRH Hochschule Heidelberg",
+                            "<b>Tech Stack:</b> C++, Raylib",
+                            "<b>My Role:</b> Feature integration, enemy AI",
+                            "<b>Team Size:</b> 5",
+                            "<b>Development Time:</b> 3 months"
                         ],
                         video: "https://1drv.ms/v/c/cdbca53e5a3fb05c/EUcytEcf-3lNqLJtwD7LOuQB9zciP9JLLxei_UMaSUGuzQ?e=kZuT6K"
                     }
@@ -439,10 +527,23 @@
                     if (project.paper) {
                         links += `<div><b>Link to the paper:</b> <a href="${project.paper}" target="_blank" rel="noopener noreferrer">Click me!</a></div>`;
                     }
+                    if (project.metaLink || project.picoLink) {
+                        links += `<div><b>Download / Play:</b> `;
+                        if (project.metaLink) {
+                            links += `<a href="${project.metaLink}" target="_blank" rel="noopener noreferrer">Meta Store</a>`;
+                        }
+                        if (project.metaLink && project.picoLink) {
+                            links += ` &nbsp;|&nbsp; `;
+                        }
+                        if (project.picoLink) {
+                            links += `<a href="${project.picoLink}" target="_blank" rel="noopener noreferrer">Pico Store</a>`;
+                        }
+                        links += `</div>`;
+                    }
 
                     modalBody.innerHTML = `
 										<h3 class="alt">${project.title}</h3>
-										<h5>${project.description}</h5>
+										<p style="text-align: left;">${project.description}</p>
 										<span class="image main"><img src="${project.image}" alt="" /></span>
 										${project.details.map(detail => `${detail}<br>`).join('')}
 										${links}
@@ -497,16 +598,6 @@
                             });
                         });
                     });
-
-                    // Close modal when clicking outside
-                    window.onclick = function(event) {
-                        const modal = document.getElementById('project-modal');
-                        if (event.target == modal) {
-                            modal.style.display = 'none';
-                            // Re-enable body scroll when modal is closed by clicking outside
-                            document.body.classList.remove('modal-open');
-                        }
-                    }
                 });
 
                 // Animate egg function
@@ -687,21 +778,21 @@
 Tayfun Akincir - XR Software Developer
 
 Hi, I'm Tayfun - a software developer based in Germany with 5 years of 
-experience in innovative projects. I specialize in C# programming, 
-particularly in Unity and Virtual Reality development.
+experience in innovative projects. I specialize in C# programming, particularly in Unity, Virtual Reality and networked multiplayer development.
 
 I'm passionate about creating immersive experiences and solving complex 
-technical challenges in VR/AR applications.`,
+technical challenges in VR/AR and mobile applications.`,
 
                     skills: `Technical Skills:
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Languages:     C#, C++, Python, JavaScript
-Engines:       Unity3D, Unreal Engine
-VR/AR:         SteamVR, XR Toolkit, HurricaneVR
-Networking:    Photon Fusion, Multiplayer Systems
-Tools:         Git, Visual Studio, Blender
-Frameworks:    VRIK, ProBuilder, Antilatency
-Platforms:     Windows, VR Headsets (Quest, Vive)`,
+<b>Languages:</b>     C#, C++, Python, JavaScript, Dart \n
+<b>Engines:</b>       Unity3D, Unreal Engine \n
+<b>VR/AR:</b>         SteamVR, XR Toolkit, HurricaneVR \n
+<b>Mobile:</b>        Flutter (actively learning) \n
+<b>Networking:</b>    Photon Fusion, Netcode for GameObjects \n
+<b>Tools:</b>         Git, Visual Studio, Blender, Rider \n
+<b>Frameworks:</b>    VRIK, ProBuilder, Antilatency \n
+<b>Platforms:</b>     Windows, VR Headsets (Meta, Vive, Pico)`,
                     
 
                     contact: `Contact Information:
@@ -714,6 +805,10 @@ Feel free to reach out for collaboration opportunities or job offers!`,
 
                     experience: `Work Experience:
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Fansea GmbH (2025 - Current)
+→ XR Software Developer
+→ VR application development, multiplayer integration
+
 Litexa GmbH (2023-2024)
 → XR Software Developer
 → VR application development, multiplayer integration
@@ -1292,7 +1387,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
     </div>
 
     <!-- Project Detail Modal - Positioned outside all containers for proper viewport centering -->
-    <div id="project-modal" class="modal">
+    <div id="project-modal" class="modal" onclick="event.stopPropagation();">
         <div class="modal-content">
             <span class="close" onclick="event.preventDefault(); event.stopPropagation(); closeProjectDetails();">&times;</span>
             <div id="modal-body">
