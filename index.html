@@ -22,6 +22,33 @@
         .modal-content .image:before {
             display: none;
         }
+
+        #header .logo {
+            position: relative;
+            overflow: hidden;
+        }
+        #header .logo img.logo-main {
+            width: 100%; height: 100%;
+            object-fit: cover; border-radius: 100%;
+            opacity: 0.7;
+            transition: opacity 0.4s ease, filter 0.4s ease;
+        }
+        #header .logo:hover img.logo-main {
+            opacity: 0;
+        }
+        #header .logo img.logo-hover {
+            position: absolute;
+            inset: 0;
+            width: 100%; height: 100%;
+            object-fit: cover; border-radius: 100%;
+            opacity: 0;
+            transition: opacity 0.4s ease, filter 0.4s ease;
+            pointer-events: none;
+        }
+        #header .logo:hover img.logo-hover {
+            opacity: 1.0;
+            filter: drop-shadow(0 0 8px rgba(255,255,255,0.6));
+        }
     </style>
 </head>
 <body class="is-preload">
@@ -32,13 +59,14 @@
     <!-- Header -->
     <header id="header">
         <div class="logo">
-            <span class="icon solid fa-laptop-code"></span>
+            <img src="images/frontpage.png" alt="Logo" class="logo-main" />
+            <img src="images/vrpic.png" alt="Logo Hover" class="logo-hover" />
         </div>
         <div class="content">
             <div class="inner">
                 <h1>Tayfun Akincir</h1>
                 <p>XR Software Developer<br />
-                    Unity3D, Unreal Engine, C#, C++, Python</p>
+                    Unity, Unreal Engine, C#, C++, Python</p>
             </div>
         </div>
         <nav>
