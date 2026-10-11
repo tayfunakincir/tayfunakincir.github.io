@@ -4,11 +4,15 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
-<html>
+<html lang="en">
 <head>
     <title>Portfolio | Tayfun Akincir</title>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Portfolio of Tayfun Akincir, XR software developer - VR, Unity, Unreal Engine, C#, C++ and multiplayer projects." />
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="images/favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
     <link rel="stylesheet" href="assets/css/main.css" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
     <style>
@@ -49,10 +53,77 @@
             opacity: 1.0;
             filter: drop-shadow(0 0 8px rgba(255,255,255,0.6));
         }
+
+        #lang-switcher {
+            position: fixed;
+            top: 0.75rem;
+            right: 0.75rem;
+            z-index: 9999;
+        }
+
+        #lang-toggle {
+            display: flex;
+            align-items: center;
+            gap: 0px;
+            max-width: 36px;
+            overflow: hidden;
+            white-space: nowrap;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 5px;
+            padding-top: 13px !important;
+            padding-bottom: 13px !important;
+            padding-left: 5px !important;
+            padding-right: 5px !important;
+            height: 22px;
+            cursor: pointer;
+            backdrop-filter: blur(8px);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.35);
+            transition: max-width 0.35s ease, gap 0.3s ease, background 0.2s ease, padding-right 0.3s ease;
+            margin: 0;
+            appearance: none;
+            -webkit-appearance: none;
+        }
+
+        #lang-toggle img {
+            display: block;
+            border-radius: 2px;
+            flex-shrink: 0;
+        }
+
+        #lang-toggle-text {
+            font-size: 0.72rem;
+            color: rgba(255,255,255,0.9);
+            opacity: 0;
+            max-width: 0;
+            font-family: sans-serif;
+            font-weight: 400;
+            letter-spacing: 0.02em;
+            transition: opacity 0.25s ease 0.1s, max-width 0.35s ease;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        #lang-toggle:hover {
+            max-width: 300px;
+            gap: 7px;
+            background: rgba(255,255,255,0.18);
+            padding-right: 8px !important;
+        }
+
+        #lang-toggle:hover #lang-toggle-text {
+            opacity: 1;
+            max-width: 250px;
+        }
     </style>
 </head>
 <body class="is-preload">
-
+<div id="lang-switcher">
+    <button id="lang-toggle" title="">
+        <img src="https://flagcdn.com/24x18/de.png" alt="DE" width="24" height="18">
+        <span id="lang-toggle-text">Switch language?</span>
+    </button>
+</div>
 <!-- Wrapper -->
 <div id="wrapper">
 
@@ -65,25 +136,24 @@
         <div class="content">
             <div class="inner">
                 <h1>Tayfun Akincir</h1>
-                <p>XR Software Developer<br />
+                <p data-i18n="header_subtitle">XR Software Developer<br />
                     Unity, Unreal Engine, C#, C++, Python</p>
             </div>
         </div>
         <nav>
             <ul>
-                <li><a href="#intro">Work</a></li>
+                <li><a href="#intro" data-i18n="nav_work">Work</a></li>
                 <li class="demo-btn-wrapper" style="position: relative; display: inline-block;">
                     <!--<a href="webgl/index.html">Demo</a>-->
-                    <a href="#">Demo</a>
+                    <a href="#" data-i18n="nav_demo">Demo</a>
                     <img src="images/underconstruction.png" alt="Under Construction"
                          class="uc-overlay"
                          style="position: absolute; top: 50%; left: 50%;
                 transform: translate(-50%, -50%);
                 width: 100%; pointer-events: none; z-index: 10;">
                 </li>
-                <li><a href="#about">About</a></li>
+                <li><a href="#about" data-i18n="nav_about">About</a></li>
                 <!--<li><a href="#contact">Contact</a></li>-->
-                <!--<li><a href="#elements">Elements</a></li>-->
             </ul>
         </nav>
     </header>
@@ -93,13 +163,13 @@
 
         <!-- Work -->
         <article id="intro">
-            <h2 class="major">Overview of my work</h2>
+            <h2 class="major" data-i18n="work_heading">Overview of my work</h2>
             
             <!-- Filter Controls below heading -->
             <div class="filter-controls">
-                <h4>Sort by type</h4>
+                <h4 data-i18n="filter_label">Sort by type</h4>
                 <div class="filter-tags">
-                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn active" data-filter="all" data-i18n="filter_all">All</button>
                     <button class="filter-btn" data-filter="vr">VR</button>
                     <button class="filter-btn" data-filter="unity">Unity</button>
                     <button class="filter-btn" data-filter="unreal">Unreal</button>
@@ -113,7 +183,7 @@
             <div class="project-grid">
 
                 <!-- GBCity Experience -->
-                <div class="project-card" onclick="showProjectDetails('project13')">
+                <div class="project-card" data-tags="vr unity multiplayer commercial" role="button" tabindex="0" onclick="showProjectDetails('project13')">
                     <div class="project-image">
                         <img src="images/work13.jpg" alt="GBCity Experience" />
                         <div class="project-overlay">
@@ -122,18 +192,18 @@
                         </div>
                     </div>
                     <div class="project-info">
-                        <h3>GBCity Experience</h3>
-                        <p class="project-summary">Multiplayer VR product configurator for Goldbeck</p>
+                        <h3 data-i18n="title_project13">GBCity Experience</h3>
+                        <p class="project-summary" data-i18n="sum_project13">Multiplayer VR product configurator for Goldbeck</p>
                         <div class="project-tags">
-                            <span class="tag">Multiplayer</span>
-                            <span class="tag">Unity</span>
-                            <span class="tag">Commercial</span>
+                            <span class="tag" data-i18n="tag_multiplayer">Multiplayer</span>
+                            <span class="tag" data-i18n="tag_unity">Unity</span>
+                            <span class="tag" data-i18n="tag_commercial">Commercial</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Goal King -->
-                <div class="project-card" onclick="showProjectDetails('project12')">
+                <div class="project-card" data-tags="vr unity multiplayer commercial" role="button" tabindex="0" onclick="showProjectDetails('project12')">
                     <div class="project-image">
                         <img src="images/work12.jpg" alt="Goal King" />
                         <div class="project-overlay">
@@ -142,19 +212,19 @@
                         </div>
                     </div>
                     <div class="project-info">
-                        <h3>Goal King</h3>
-                        <p class="project-summary">Published VR sports title available on Meta Quest & Pico</p>
+                        <h3 data-i18n="title_project12">Goal King</h3>
+                        <p class="project-summary" data-i18n="sum_project12">Published VR sports title available on Meta Quest & Pico</p>
                         <div class="project-tags">
-                            <span class="tag">Multiplayer</span>
-                            <span class="tag">Unity</span>
-                            <span class="tag">Commercial</span>
+                            <span class="tag" data-i18n="tag_multiplayer">Multiplayer</span>
+                            <span class="tag" data-i18n="tag_unity">Unity</span>
+                            <span class="tag" data-i18n="tag_commercial">Commercial</span>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Arcane Arsenal -->
-                <div class="project-card" onclick="showProjectDetails('project1')">
-                    <div class="project-image">
+                <div class="project-card" data-tags="unreal cpp multiplayer" role="button" tabindex="0" onclick="showProjectDetails('project1')">
+                    <div class="project-image" >
                         <img src="images/work1.jpg" alt="Arcane Arsenal" />
                         <div class="project-overlay">
                             <div class="project-year">2024</div>
@@ -162,17 +232,17 @@
                         </div>
                     </div>
                     <div class="project-info">
-                        <h3>Arcane Arsenal</h3>
-                        <p class="project-summary">Network replication prototype with C++ implementation</p>
+                        <h3 data-i18n="title_project1">Arcane Arsenal</h3>
+                        <p class="project-summary" data-i18n="sum_project1">Network replication prototype with C++ implementation</p>
                         <div class="project-tags">
-                            <span class="tag">Multiplayer</span>
-                            <span class="tag">Blueprints</span>
+                            <span class="tag" data-i18n="tag_multiplayer">Multiplayer</span>
+                            <span class="tag" data-i18n="tag_blueprints">Blueprints</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- VR House Designer -->
-                <div class="project-card" onclick="showProjectDetails('project2')">
+                <div class="project-card" data-tags="vr unity commercial" role="button" tabindex="0" onclick="showProjectDetails('project2')">
                     <div class="project-image">
                         <img src="images/work2.jpg" alt="VR House Designer" />
                         <div class="project-overlay">
@@ -181,18 +251,18 @@
                         </div>
                     </div>
                     <div class="project-info">
-                        <h3>VR House Designer</h3>
-                        <p class="project-summary">Collaborative VR furnishing application</p>
+                        <h3 data-i18n="title_project2">VR House Designer</h3>
+                        <p class="project-summary" data-i18n="sum_project2">Collaborative VR furnishing application</p>
                         <div class="project-tags">
-                            <span class="tag">VR</span>
-                            <span class="tag">Commercial</span>
-                            <span class="tag">Collaboration</span>
+                            <span class="tag" data-i18n="tag_vr">VR</span>
+                            <span class="tag" data-i18n="tag_commercial">Commercial</span>
+                            <span class="tag" data-i18n="tag_collaboration">Collaboration</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Antilatency Showroom -->
-                <div class="project-card" onclick="showProjectDetails('project3')">
+                <div class="project-card" data-tags="vr unity multiplayer commercial" role="button" tabindex="0" onclick="showProjectDetails('project3')">
                     <div class="project-image">
                         <img src="images/work3.jpg" alt="Antilatency Showroom" />
                         <div class="project-overlay">
@@ -201,18 +271,18 @@
                         </div>
                     </div>
                     <div class="project-info">
-                        <h3>Antilatency Showroom</h3>
-                        <p class="project-summary">Body tracking showroom with multiplayer support</p>
+                        <h3 data-i18n="title_project3">Antilatency Showroom</h3>
+                        <p class="project-summary" data-i18n="sum_project3">Body tracking showroom with multiplayer support</p>
                         <div class="project-tags">
-                            <span class="tag">Body Tracking</span>
-                            <span class="tag">Commercial</span>
-                            <span class="tag">Multiplayer</span>
+                            <span class="tag" data-i18n="tag_bodytracking">Body Tracking</span>
+                            <span class="tag" data-i18n="tag_commercial">Commercial</span>
+                            <span class="tag" data-i18n="tag_multiplayer">Multiplayer</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Procedural Mesh Generation -->
-                <div class="project-card" onclick="showProjectDetails('project4')">
+                <div class="project-card" data-tags="unity" role="button" tabindex="0" onclick="showProjectDetails('project4')">
                     <div class="project-image">
                         <img src="images/work4.jpg" alt="Procedural Mesh Generation" />
                         <div class="project-overlay">
@@ -221,17 +291,17 @@
                         </div>
                     </div>
                     <div class="project-info">
-                        <h3>Procedural Mesh Generation</h3>
-                        <p class="project-summary">Dynamic mesh creation for house design editor</p>
+                        <h3 data-i18n="title_project4">Procedural Mesh Generation</h3>
+                        <p class="project-summary" data-i18n="sum_project4">Dynamic mesh creation for house design editor</p>
                         <div class="project-tags">
-                            <span class="tag">Procedural</span>
-                            <span class="tag">Mesh API</span>
+                            <span class="tag" data-i18n="tag_procedural">Procedural</span>
+                            <span class="tag" data-i18n="tag_meshapi">Mesh API</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- VR Triage -->
-                <div class="project-card" onclick="showProjectDetails('project5')">
+                <div class="project-card" data-tags="vr unity" role="button" tabindex="0" onclick="showProjectDetails('project5')">
                     <div class="project-image">
                         <img src="images/work5.jpg" alt="VR Triage" />
                         <div class="project-overlay">
@@ -240,17 +310,17 @@
                         </div>
                     </div>
                     <div class="project-info">
-                        <h3>VR-Triage Prototype</h3>
-                        <p class="project-summary">Emergency medical care simulation (Bachelor Thesis)</p>
+                        <h3 data-i18n="title_project5">VR-Triage Prototype</h3>
+                        <p class="project-summary" data-i18n="sum_project5">Emergency medical care simulation (Bachelor Thesis)</p>
                         <div class="project-tags">
-                            <span class="tag">Medical</span>
-                            <span class="tag">Thesis</span>
+                            <span class="tag" data-i18n="tag_medical">Medical</span>
+                            <span class="tag" data-i18n="tag_thesis">Thesis</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- VRex -->
-                <div class="project-card" onclick="showProjectDetails('project6')">
+                <div class="project-card" data-tags="vr unity" role="button" tabindex="0" onclick="showProjectDetails('project6')">
                     <div class="project-image">
                         <img src="images/work6.jpg" alt="VRex" />
                         <div class="project-overlay">
@@ -259,17 +329,17 @@
                         </div>
                     </div>
                     <div class="project-info">
-                        <h3>VRex: Virtual Paleontology</h3>
-                        <p class="project-summary">Interactive paleontology serious game</p>
+                        <h3 data-i18n="title_project6">VRex: Virtual Paleontology</h3>
+                        <p class="project-summary" data-i18n="sum_project6">Interactive paleontology serious game</p>
                         <div class="project-tags">
-                            <span class="tag">Educational</span>
-                            <span class="tag">Serious Game</span>
+                            <span class="tag" data-i18n="tag_educational">Educational</span>
+                            <span class="tag" data-i18n="tag_seriousgame">Serious Game</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- UI Pattern Paper -->
-                <div class="project-card publication" onclick="showProjectDetails('project7')">
+                <div class="project-card publication" data-tags="" role="button" tabindex="0" onclick="showProjectDetails('project7')">
                     <div class="project-image">
                         <img src="images/work11.jpg" alt="UI Pattern Paper" />
                         <div class="project-overlay">
@@ -278,17 +348,17 @@
                         </div>
                     </div>
                     <div class="project-info">
-                        <h3>UI Design Patterns Paper</h3>
-                        <p class="project-summary">Overview of 200+ VR/AR/MR design patterns</p>
+                        <h3 data-i18n="title_project7">UI Design Patterns Paper</h3>
+                        <p class="project-summary" data-i18n="sum_project7">Overview of 200+ VR/AR/MR design patterns</p>
                         <div class="project-tags">
-                            <span class="tag">Research</span>
-                            <span class="tag">Academic</span>
+                            <span class="tag" data-i18n="tag_research">Research</span>
+                            <span class="tag" data-i18n="tag_academic">Academic</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Rossmann VR -->
-                <div class="project-card" onclick="showProjectDetails('project8')">
+                <div class="project-card" data-tags="vr unity commercial" role="button" tabindex="0" onclick="showProjectDetails('project8')">
                     <div class="project-image">
                         <img src="images/work7.jpg" alt="Rossmann VR" />
                         <div class="project-overlay">
@@ -297,17 +367,17 @@
                         </div>
                     </div>
                     <div class="project-info">
-                        <h3>Rossmann VR</h3>
-                        <p class="project-summary">Interactive workplace presentation for Rossmann</p>
+                        <h3 data-i18n="title_project8">Rossmann VR</h3>
+                        <p class="project-summary" data-i18n="sum_project8">Interactive workplace presentation for Rossmann</p>
                         <div class="project-tags">
-                            <span class="tag">Commercial</span>
-                            <span class="tag">Training</span>
+                            <span class="tag" data-i18n="tag_commercial">Commercial</span>
+                            <span class="tag" data-i18n="tag_training">Training</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- KIND VR -->
-                <div class="project-card" onclick="showProjectDetails('project9')">
+                <div class="project-card" data-tags="vr unity commercial" role="button" tabindex="0" onclick="showProjectDetails('project9')">
                     <div class="project-image">
                         <img src="images/work8.jpg" alt="KIND VR" />
                         <div class="project-overlay">
@@ -316,17 +386,17 @@
                         </div>
                     </div>
                     <div class="project-info">
-                        <h3>KIND VR</h3>
-                        <p class="project-summary">Interactive workplace presentation for KIND</p>
+                        <h3 data-i18n="title_project9">KIND VR</h3>
+                        <p class="project-summary" data-i18n="sum_project9">Interactive workplace presentation for KIND</p>
                         <div class="project-tags">
-                            <span class="tag">Commercial</span>
-                            <span class="tag">Training</span>
+                            <span class="tag" data-i18n="tag_commercial">Commercial</span>
+                            <span class="tag" data-i18n="tag_training">Training</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- University Recipes -->
-                <div class="project-card" onclick="showProjectDetails('project10')">
+                <div class="project-card" data-tags="vr unity" role="button" tabindex="0" onclick="showProjectDetails('project10')">
                     <div class="project-image">
                         <img src="images/work9.jpg" alt="University Recipes" />
                         <div class="project-overlay">
@@ -335,17 +405,17 @@
                         </div>
                     </div>
                     <div class="project-info">
-                        <h3>University Recipes</h3>
-                        <p class="project-summary">Humorous VR cooking simulation for students</p>
+                        <h3 data-i18n="title_project10">University Recipes</h3>
+                        <p class="project-summary" data-i18n="sum_project10">Humorous VR cooking simulation for students</p>
                         <div class="project-tags">
-                            <span class="tag">Game</span>
-                            <span class="tag">Simulation</span>
+                            <span class="tag" data-i18n="tag_game">Game</span>
+                            <span class="tag" data-i18n="tag_simulation">Simulation</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Blade Gunner -->
-                <div class="project-card" onclick="showProjectDetails('project11')">
+                <div class="project-card" data-tags="cpp" role="button" tabindex="0" onclick="showProjectDetails('project11')">
                     <div class="project-image">
                         <img src="images/work10.jpg" alt="Blade Gunner" />
                         <div class="project-overlay">
@@ -354,218 +424,38 @@
                         </div>
                     </div>
                     <div class="project-info">
-                        <h3>Blade Gunner</h3>
-                        <p class="project-summary">Classic "Gauntlet"-inspired university project</p>
+                        <h3 data-i18n="title_project11">Blade Gunner</h3>
+                        <p class="project-summary" data-i18n="sum_project11">Classic "Gauntlet"-inspired university project</p>
                         <div class="project-tags">
-                            <span class="tag">Game</span>
-                            <span class="tag">C++</span>
+                            <span class="tag" data-i18n="tag_game">Game</span>
+                            <span class="tag" data-i18n="tag_cpp">C++</span>
                         </div>
                     </div>
                 </div>
             </div>
 
             <script>
-                // Project details data
-                const projectDetails = {
-
-                    project13: {
-                        title: "GBCity Experience - 2025",
-                        description: "Multiplayer VR product configurator developed for Goldbeck, allowing multiple users to collaboratively explore and customise Goldbeck's modular building solutions in real time. Implemented multiplayer synchronisation using Unity Netcode for GameObjects. Features an Operator-User system, where an operator monitors and controls the users' VR experience via a Windows tablet.",
-                        image: "images/work13.jpg",
-                        details: [
-                            "<b>Organisation:</b> Fansea GmbH",
-                            "<b>Tech Stack:</b> Unity, C#, Netcode for Gameobjects",
-                            "<b>My Role:</b> Multiplayer integration, VR interaction, feature integration",
-                            "<b>Team Size:</b> 6",
-                            "<b>Development Time:</b> 1 year"
-                        ],
-                    },
-                    project12: {
-                        title: "Goal King - 2025",
-                        description: "Commercially released VR title available on Meta Quest and Pico stores. Responsible for converting the existing Unreal Engine codebase to Unity, implementing VR interaction systems, and ongoing feature integration as part of a 3-person team at Fansea.",
-                        image: "images/work12.jpg",
-                        details: [
-                            "<b>Organisation:</b> Fansea GmbH",
-                            "<b>Tech Stack:</b> Unity, C#",
-                            "<b>My Role:</b> Unreal → Unity conversion, VR interaction, feature integration",
-                            "<b>Team Size:</b> 3",
-                            "<b>Development Time:</b> Ongoing"
-                        ],
-                        video: "https://scontent-fra3-1.oculuscdn.com/v/t64.7195-25/499619072_649126620815141_3343765279080079912_n.mp4?_nc_cat=105&ccb=1-7&_nc_sid=b20b63&_nc_ohc=2HULAlxvwdoQ7kNvwEmf56Y&_nc_oc=AdrQrXyy2bJY_JJLvDwgkIJe_nDNfbrJcrrULpo3kDBjFvF9egREuVyJu8bODTa_wXM&_nc_zt=28&_nc_ht=scontent-fra3-1.oculuscdn.com&_nc_gid=o6AvgGXfaQKGZGZx-5SD0A&_nc_ss=7a389&oh=00_Af1mpnSHmxFgpJk2T_qpJ-yjeDd1WmaYzkrXXeXVnARsZQ&oe=69DE0414",
-                        metaLink: "https://www.meta.com/de-de/experiences/goal-king/5211598935630591/",
-                        picoLink: "https://store-global.picoxr.com/global/detail/1/7480434548917010437"
-                    },
-                    project1: {
-                        title: "Arcane Arsenal - 2024",
-                        description: "Unreal Engine multiplayer prototype implementing C++ network replication, RPCs, and Blueprint performance benchmarking.",
-                        image: "images/work1.jpg",
-                        details: [
-                            "<b>Organisation:</b> Litexa GmbH",
-                            "<b>Tech Stack:</b> Unreal Engine, C++, Blueprints",
-                            "<b>Team Size:</b> Solo",
-                            "<b>Development Time:</b> 1 month"
-                        ],
-                        video: "https://1drv.ms/v/c/cdbca53e5a3fb05c/EY7gbNFVTrNIhlAey146DDEBfMN-eoCTO1k5UKJJCpKDZg?e=u0uQU5"
-                    },
-                    project2: {
-                        title: "VR House Designer - 2024",
-                        description: "Collaborative VR application allowing multiple users to design and furnish rooms in real time. Implemented multiplayer synchronisation via Photon Fusion and VR interaction systems using HurricaneVR.",
-                        image: "images/work2.jpg",
-                        details: [
-                            "<b>Organisation:</b> Litexa GmbH",
-                            "<b>Tech Stack:</b> Unity3D, C#, HurricaneVR, Photon Fusion, VRIK",
-                            "<b>My Role:</b> Multiplayer integration, VR interaction, Programming Lead",
-                            "<b>Team Size:</b> 3",
-                            "<b>Development Time:</b> 3 months"
-                        ],
-                        video: "https://1drv.ms/v/c/cdbca53e5a3fb05c/EY4GiQKe53hCsaD9hPWqS3MBCSCAkW6I1vC4jNSsQ1vnjg?e=QvDB4A"
-                    },
-                    project3: {
-                        title: "Antilatency Showroom - 2023/2024",
-                        description: "Commercial showroom application demonstrating full-body tracking via the Antilatency SDK and VRIK, with multiplayer support for simultaneous multi-user tracking sessions.",
-                        image: "images/work3.jpg",
-                        details: [
-                            "<b>Organisation:</b> Litexa GmbH",
-                            "<b>Tech Stack:</b> Unity3D, C#, HurricaneVR, Photon Fusion, VRIK, Antilatency SDK",
-                            "<b>My Role:</b>  Multiplayer integration, Body tracking integration, VR interaction, Programming Lead",
-                            "<b>Team Size:</b> 3",
-                            "<b>Development Time:</b> 1 year"
-                        ],
-                        video: "https://1drv.ms/v/c/cdbca53e5a3fb05c/EZIeY6WflpBGl0gnzr3bb0IBJ2TlPem4K-AtoaiFaqGo0Q?e=WHsjNw"
-                    },
-                    project4: {
-                        title: "Procedural Mesh Generation - 2023",
-                        description: "Runtime procedural mesh generation system for a VR house editor, utilising Unity's Simple & Advanced Mesh APIs and the ProBuilder API to dynamically build geometry based on user input.",
-                        image: "images/work4.jpg",
-                        details: [
-                            "<b>Organisation:</b> Litexa GmbH",
-                            "<b>Tech Stack:</b> Unity3D, C#, Simple & Advanced Mesh API, ProBuilder API",
-                            "<b>Team Size:</b> Solo",
-                            "<b>Development Time:</b> 1 month"
-                        ],
-                        video: "https://1drv.ms/v/c/cdbca53e5a3fb05c/EbXi_2ua2ktJrnL6PFaBZFcBE-xvH2_E6IKbyjMCm1yFCg?e=RorroL"
-                    },
-                    project5: {
-                        title: "VR-Triage Prototype - 2022",
-                        description: "VR training simulation for emergency room triage procedures, developed as a solo bachelor thesis project in collaboration with Universitätsklinikum Heidelberg.",
-                        image: "images/work5.jpg",
-                        details: [
-                            "<b>Organisation:</b> Universitätsklinikum Heidelberg",
-                            "<b>Tech Stack:</b> Unity3D, C#, SteamVR",
-                            "<b>Team Size:</b> Solo",
-                            "<b>Development Time:</b> 4 months"
-                        ],
-                        video: "https://1drv.ms/v/c/cdbca53e5a3fb05c/ES7_bkB_8mZLlIdyDlcUWtwBAd2W3-RXWXnCAb0dsqchEQ?e=gft78b",
-                        thesis: "https://www.dropbox.com/s/3c88v03o6eyj2if/BA_Thesis_TAYFUN_AKINCIR.pdf?dl=0"
-                    },
-                    project6: {
-                        title: "VRex: Virtual Paleontology - 2022",
-                        description: "Educational serious game simulating paleontological fieldwork, developed in a team of 7. Contributed to VR interaction design and core gameplay systems.",
-                        image: "images/work6.jpg",
-                        details: [
-                            "<b>Organisation:</b> SRH Hochschule Heidelberg",
-                            "<b>Tech Stack:</b> Unity3D, C#, SteamVR",
-                            "<b>My Role:</b> VR interaction, feature integration, Programming Lead",
-                            "<b>Team Size:</b> 7",
-                            "<b>Development Time:</b> 4 months"
-                        ],
-                        video: "https://1drv.ms/v/c/cdbca53e5a3fb05c/EVhWCvYvmDpEuTIhvI14m2YB4_0f7e1JrEp5X_cUnThhZg?e=Dzw25d"
-                    },
-                    project7: {
-                        title: "UI & Interaction Design Patterns for VR, AR, and MR - 2022",
-                        description: "Published academic paper cataloguing 200+ UI/UX design patterns for VR, AR, and MR applications. Presented at MuC 2022 (Mensch und Computer).",
-                        image: "images/work11.jpg",
-                        details: [
-                            "<b>DOI:</b> 10.18420/muc2022-mci-ws06-419",
-                            "<b>Published:</b> September 2022",
-                            "<b>Authorship:</b> 2nd author",
-                            "<b>Note:</b> Based on original research also covering UX norms and guidelines."
-                        ],
-                        paper: "https://www.researchgate.net/publication/363263265_An_Overview_of_User_Interface_and_Interaction_Design_Patterns_for_VR_AR_and_MR_Applications"
-                    },
-                    project8: {
-                        title: "Rossmann VR - 2021",
-                        description: "Commercial VR experience showcasing workplace scenarios at Rossmann, designed for recruitment and employer branding. Delivered within 1 month as a 2-person team.",
-                        image: "images/work7.jpg",
-                        details: [
-                            "<b>Client:</b> Rossmann (via Einfach Genial aGmbH)",
-                            "<b>Tech Stack:</b> Unity3D, C#, SteamVR",
-                            "<b>My Role:</b> VR interaction, feature integration",
-                            "<b>Team Size:</b> 2",
-                            "<b>Development Time:</b> 1 month"
-                        ],
-                        video: "https://1drv.ms/v/c/cdbca53e5a3fb05c/EdwzeGHspGFCoXQwr5QTsecBsxEis7uhuJij9iTroG_YPA?e=qcEDqZ"
-                    },
-                    project9: {
-                        title: "KIND VR - 2021",
-                        description: "Commercial VR onboarding experience for hearing care specialists KIND, built back-to-back with the Rossmann project — demonstrating efficient reuse of VR systems across clients.",
-                        image: "images/work8.jpg",
-                        details: [
-                            "<b>Client:</b> KIND (via Einfach Genial aGmbH)",
-                            "<b>Tech Stack:</b> Unity3D, C#, SteamVR",
-                            "<b>My Role:</b> VR interaction, feature integration",
-                            "<b>Team Size:</b> 2",
-                            "<b>Development Time:</b> 1 month"
-                        ],
-                        video: "https://1drv.ms/v/c/cdbca53e5a3fb05c/EVeZrDTDReROlVZrzcXlATAB6y1M0CKlOqARlS_FV774aA?e=QbRRbQ"
-                    },
-                    project10: {
-                        title: "University Recipes - 2020/2021",
-                        description: "Lighthearted VR cooking simulation built with a team of 6, exploring XR Interaction Toolkit mechanics and physics-based object interaction.",
-                        image: "images/work9.jpg",
-                        details: [
-                            "<b>Organisation:</b> SRH Hochschule Heidelberg",
-                            "<b>Tech Stack:</b> Unity3D, C#, XR Interaction Toolkit",
-                            "<b>My Role:</b> VR interaction, feature integration, Programming Lead",
-                            "<b>Team Size:</b> 6",
-                            "<b>Development Time:</b> 3 months"
-                        ],
-                        video: "https://1drv.ms/v/c/cdbca53e5a3fb05c/EcplHZ343z9DuLbqCH-y5UABuwYG1103MmpEcTtLmv7sbA?e=g7ZPKq"
-                    },
-                    project11: {
-                        title: "Blade Gunner - 2020",
-                        description: "Top-down action game inspired by the arcade classic Gauntlet, developed in C++ with Raylib as a 5-person university project.",
-                        image: "images/work10.jpg",
-                        details: [
-                            "<b>Organisation:</b> SRH Hochschule Heidelberg",
-                            "<b>Tech Stack:</b> C++, Raylib",
-                            "<b>My Role:</b> Feature integration, enemy AI",
-                            "<b>Team Size:</b> 5",
-                            "<b>Development Time:</b> 3 months"
-                        ],
-                        video: "https://1drv.ms/v/c/cdbca53e5a3fb05c/EUcytEcf-3lNqLJtwD7LOuQB9zciP9JLLxei_UMaSUGuzQ?e=kZuT6K"
-                    }
-                };
-
                 // Show project details
                 function showProjectDetails(projectId) {
-                    const project = projectDetails[projectId];
+                    const project = window.i18n.projectDetails[window.currentLang][projectId];
                     if (!project) return;
-
+                    window.currentOpenProject = projectId;
+                    const t = window.i18n.static[window.currentLang];
                     const modal = document.getElementById('project-modal');
                     const modalBody = document.getElementById('modal-body');
 
                     let links = '';
-                    if (project.video) {
-                        links += `<div><b>Video showing the project:</b> <a href="${project.video}" target="_blank" rel="noopener noreferrer">Click me!</a></div>`;
-                    }
-                    if (project.thesis) {
-                        links += `<div><b>Link to my bachelor thesis:</b> <a href="${project.thesis}" target="_blank" rel="noopener noreferrer">Click me!</a></div>`;
-                    }
-                    if (project.paper) {
-                        links += `<div><b>Link to the paper:</b> <a href="${project.paper}" target="_blank" rel="noopener noreferrer">Click me!</a></div>`;
-                    }
+                    if (project.video)
+                        links += `<div><b>${t.link_video}</b> <a href="${project.video}" target="_blank">${t.link_click}</a></div>`;
+                    if (project.thesis)
+                        links += `<div><b>${t.link_thesis}</b> <a href="${project.thesis}" target="_blank">${t.link_click}</a></div>`;
+                    if (project.paper)
+                        links += `<div><b>${t.link_paper}</b> <a href="${project.paper}" target="_blank">${t.link_click}</a></div>`;
                     if (project.metaLink || project.picoLink) {
-                        links += `<div><b>Download / Play:</b> `;
-                        if (project.metaLink) {
-                            links += `<a href="${project.metaLink}" target="_blank" rel="noopener noreferrer">Meta Store</a>`;
-                        }
-                        if (project.metaLink && project.picoLink) {
-                            links += ` &nbsp;|&nbsp; `;
-                        }
-                        if (project.picoLink) {
-                            links += `<a href="${project.picoLink}" target="_blank" rel="noopener noreferrer">Pico Store</a>`;
-                        }
+                        links += `<div><b>${t.link_download}</b> `;
+                        if (project.metaLink) links += `<a href="${project.metaLink}" target="_blank">Meta Store</a>`;
+                        if (project.metaLink && project.picoLink) links += ` &nbsp;|&nbsp; `;
+                        if (project.picoLink) links += `<a href="${project.picoLink}" target="_blank">Pico Store</a>`;
                         links += `</div>`;
                     }
 
@@ -587,7 +477,40 @@
                     document.getElementById('project-modal').style.display = 'none';
                     // Re-enable body scroll when modal is closed
                     document.body.classList.remove('modal-open');
+                    // Hand focus back to the card that opened the modal
+                    const opener = document.querySelector('.project-card[onclick*="' + window.currentOpenProject + '"]');
+                    window.currentOpenProject = null;
+                    if (opener) opener.focus();
                 }
+
+                // Escape must close the modal first. main.js listens for keyup on
+                // window; this handler sits on document, so it runs earlier in the
+                // bubble phase and can stop the article underneath from closing too.
+                document.addEventListener('keyup', function (event) {
+                    if (event.key === 'Escape' && window.currentOpenProject) {
+                        event.stopPropagation();
+                        closeProjectDetails();
+                    }
+                });
+
+                // Clicking the dimmed backdrop closes the modal as well.
+                // The modal lives further down the document, so wait for it.
+                document.addEventListener('DOMContentLoaded', function () {
+                    document.getElementById('project-modal').addEventListener('click', function (event) {
+                        if (event.target === this) closeProjectDetails();
+                    });
+
+                    // Cards are divs with role="button": wire up Enter/Space so they
+                    // are operable without a mouse.
+                    document.querySelectorAll('.project-card').forEach(function (card) {
+                        card.addEventListener('keydown', function (event) {
+                            if (event.key === 'Enter' || event.key === ' ') {
+                                event.preventDefault();
+                                card.click();
+                            }
+                        });
+                    });
+                });
 
                 // Filter functionality
                 document.addEventListener('DOMContentLoaded', function() {
@@ -607,158 +530,38 @@
                                 if (filter === 'all') {
                                     card.style.display = 'block';
                                 } else {
-                                    const tags = card.querySelector('.project-tags').textContent.toLowerCase();
-                                    const tech = card.querySelector('.project-tech').textContent.toLowerCase();
-                                    const title = card.querySelector('h3').textContent.toLowerCase();
-
-                                    const shouldShow = tags.includes(filter) ||
-                                        tech.includes(filter) ||
-                                        title.includes(filter) ||
-                                        (filter === 'vr' && tech.includes('vr')) ||
-                                        (filter === 'unity' && tech.includes('unity')) ||
-                                        (filter === 'unreal' && tech.includes('unreal')) ||
-                                        (filter === 'cpp' && tech.includes('c++')) ||
-                                        (filter === 'multiplayer' && tags.includes('multiplayer')) ||
-                                        (filter === 'commercial' && tags.includes('commercial'));
-
-                                    card.style.display = shouldShow ? 'block' : 'none';
+                                    // Match against data-tags, not the rendered text, so the
+                                    // filter keeps working once tags/titles are translated.
+                                    const tags = (card.getAttribute('data-tags') || '').split(/\s+/);
+                                    card.style.display = tags.includes(filter) ? 'block' : 'none';
                                 }
                             });
                         });
                     });
                 });
 
-                // Animate egg function
-                function animateEgg() {
-                    // Define the egg structure with fillable positions marked as 'o'
-                    const eggStructure = [
-                        '     XXXXXXX     ',
-                        '   XXXoooooXXX   ',
-                        '  XXoooooooooXX  ',
-                        ' XXoooooooooooXX ',
-                        'XXoooooooooooooXX',
-                        'XXoooooooooooooXX',
-                        'XXoooooooooooooXX',
-                        'XXoooooooooooooXX',
-                        'XXoooooooooooooXX',
-                        ' XXoooooooooooXX ',
-                        '  XXoooooooooXX  ',
-                        '   XXXoooooXXX   ',
-                        '     XXXXXXX     '
-                    ];
-
-                    // Characters to randomly fill with
-                    const fillChars = ['♦', '♠', '♣', '♥', '★', '◆', '●', '▲', '■', '♪', '☆', '◇', '○', '△', '□', '@', '#', '$', '%', '&', '*', '+', '=', '~'];
-                    
-                    // Create output div
-                    const outputDiv = document.createElement('div');
-                    outputDiv.className = 'output-text';
-                    outputDiv.style.whiteSpace = 'pre';
-                    outputDiv.style.fontFamily = 'monospace';
-                    terminalOutput.appendChild(outputDiv);
-
-                    // Get all fillable positions
-                    const fillablePositions = [];
-                    eggStructure.forEach((line, lineIndex) => {
-                        for (let charIndex = 0; charIndex < line.length; charIndex++) {
-                            if (line[charIndex] === 'o') {
-                                fillablePositions.push({ line: lineIndex, char: charIndex });
-                            }
-                        }
-                    });
-
-                    // Shuffle positions for random filling
-                    for (let i = fillablePositions.length - 1; i > 0; i--) {
-                        const j = Math.floor(Math.random() * (i + 1));
-                        [fillablePositions[i], fillablePositions[j]] = [fillablePositions[j], fillablePositions[i]];
-                    }
-
-                    // Start with empty egg (replace 'o' with spaces)
-                    let currentEgg = eggStructure.map(line => line.replace(/o/g, ' '));
-                    
-                    let animationIndex = 0;
-                    const animationSpeed = 50; // milliseconds between fills
-
-                    function updateEgg() {
-                        if (animationIndex < fillablePositions.length) {
-                            const pos = fillablePositions[animationIndex];
-                            const randomChar = fillChars[Math.floor(Math.random() * fillChars.length)];
-                            
-                            // Update the current egg structure
-                            const lineArray = currentEgg[pos.line].split('');
-                            lineArray[pos.char] = randomChar;
-                            currentEgg[pos.line] = lineArray.join('');
-                            
-                            // Update display
-                            outputDiv.textContent = currentEgg.join('\n');
-                            
-                            animationIndex++;
-                            setTimeout(updateEgg, animationSpeed);
-                        } else {
-                            // Animation complete, add new prompt
-                            const newPrompt = document.createElement('div');
-                            newPrompt.className = 'terminal-line';
-                            newPrompt.innerHTML = `<span class="cursor">_</span>`;
-                            terminalOutput.appendChild(newPrompt);
-                            
-                            // Scroll to bottom
-                            terminalOutput.scrollTop = terminalOutput.scrollHeight;
-                        }
-                    }
-
-                    // Start animation
-                    outputDiv.textContent = currentEgg.join('\n');
-                    setTimeout(updateEgg, animationSpeed);
-                }
-
-                // Show secret commands
-                function showSecretCommands() {
-                    // Remove cursor
-                    const cursor = document.querySelector('.cursor');
-                    if (cursor) cursor.remove();
-
-                    // Add the secret discovery message to terminal
-                    const commandLine = document.createElement('div');
-                    commandLine.className = 'terminal-line';
-                    commandLine.innerHTML = `<span class="command-prefix">&gt;Secret button discovered!</span>`;
-                    terminalOutput.appendChild(commandLine);
-
-                    const secretMessage = document.createElement('div');
-                    secretMessage.className = 'output-text';
-                    secretMessage.innerHTML = `Ah you found the secret button! Here are the hidden commands you can use: hire, coffee, quote, bossfight.`;
-                    terminalOutput.appendChild(secretMessage);
-
-                    // Add new prompt with cursor
-                    const newPrompt = document.createElement('div');
-                    newPrompt.className = 'terminal-line';
-                    newPrompt.innerHTML = `<span class="cursor">_</span>`;
-                    terminalOutput.appendChild(newPrompt);
-
-                    // Scroll to bottom
-                    terminalOutput.scrollTop = terminalOutput.scrollHeight;
-                }
             </script>
         </article>
 
         <!-- About -->
         <article id="about">
-            <h2 class="major">About me</h2>
+            <h2 class="major" data-i18n="about_heading">About me</h2>
             
             <!-- Secret Button positioned in bottom right corner of About Me section background -->
             <button class="secret-button" onclick="showSecretCommands()" title="Secret commands">?</button>
             
             <div class="terminal">
                 <div class="terminal-header">
-                    <div class="terminal-title">Command Prompt</div>
+                    <div class="terminal-title" data-i18n="terminal_title">Command Prompt</div>
                     <div class="terminal-buttons">
-                        <span class="terminal-btn close"></span>
+                        <span class="terminal-btn terminal-close"></span>
                         <span class="terminal-btn minimize"></span>
                         <span class="terminal-btn maximize"></span>
                     </div>
                 </div>
                 <div class="terminal-body">
                     <div class="terminal-output" id="terminal-output">
-                        <div class="output-text">
+                        <div class="output-text" data-i18n="terminal_welcome">
                             Welcome to my interactive portfolio terminal!<br>
                             Type 'help' to see available commands, click the buttons below or try out some commands yourself! Maybe you'll find some interesting info!<br>
                         </div>
@@ -767,7 +570,7 @@
                         </div>
                     </div>
                     <div class="terminal-input-container">
-                        <input type="text" class="terminal-input" id="terminal-input" placeholder="Type a command..." autocomplete="off">
+                        <input type="text" class="terminal-input" id="terminal-input" data-i18n-placeholder="terminal_placeholder" placeholder="Type a command..." autocomplete="off">
                     </div>
                     <div class="terminal-shortcuts">
                         <button class="terminal-shortcut" onclick="executeCommand('help')">help</button>
@@ -787,86 +590,24 @@
                 let commandHistory = [];
                 let historyIndex = -1;
 
-                // Command data
-                const commands = {
-                    help: `Available commands:
-  whoami     - Learn about me
-  skills     - View my technical skills
-  contact    - Get my contact information
-  experience - View my work experience
-  education  - See my educational background
-  clear      - Clear the terminal
-  exit       - Close terminal
-  Who knows what else you can do!`,
-
-                    whoami: `<img src="images/about1.jpg" style="max-width: 700px;   
-    width: 100%; border-radius: 8px; display: block;        
-    margin: 20px auto; object-fit: cover;">                 
-
-Tayfun Akincir - XR Software Developer
-
-Hi, I'm Tayfun - a software developer based in Germany with 5 years of 
-experience in innovative projects. I specialize in C# programming, particularly in Unity, Virtual Reality and networked multiplayer development.
-
-I'm passionate about creating immersive experiences and solving complex 
-technical challenges in VR/AR and mobile applications.`,
-
-                    skills: `Technical Skills:
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-<b>Languages:</b>     C#, C++, Python, JavaScript, Dart \n
-<b>Engines:</b>       Unity3D, Unreal Engine \n
-<b>VR/AR:</b>         SteamVR, XR Toolkit, HurricaneVR \n
-<b>Mobile:</b>        Flutter (actively learning) \n
-<b>Networking:</b>    Photon Fusion, Netcode for GameObjects \n
-<b>Tools:</b>         Git, Visual Studio, Blender, Rider \n
-<b>Frameworks:</b>    VRIK, ProBuilder, Antilatency \n
-<b>Platforms:</b>     Windows, VR Headsets (Meta, Vive, Pico)`,
-                    
-
-                    contact: `Contact Information:
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-📧 Email:    <a href="mailto:tayfunakincir@gmail.com" class="icon classic fa-envelope"></a>
-💼 LinkedIn: <a href="https://www.linkedin.com/in/tayfun-akincir/" class="icon brands fa-linkedin"></a>
-📍 Location: Ludwigshafen, Germany
-
-Feel free to reach out for collaboration opportunities or job offers!`,
-
-                    experience: `Work Experience:
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Fansea GmbH (2025 - Current)
-→ XR Software Developer
-→ VR application development, multiplayer integration
-
-Litexa GmbH (2023-2024)
-→ XR Software Developer
-→ VR application development, multiplayer integration
-
-Universitätsklinikum Heidelberg (2022)
-→ VR Developer (Bachelor Thesis)
-→ Medical simulation development
-
-Einfach Genial aGmbH (2021)
-→ VR Developer
-→ Commercial VR training applications`,
-
-                    education: `Education:
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-🎓 Bachelor of Science in Computer Science
-   SRH Hochschule Heidelberg (2019-2022)
-   
-   Focus: Virtual Reality, Game Development
-   Thesis: "VR-Triage Prototype for Emergency Medical Care"`,
-
-                    clear: 'CLEAR_TERMINAL',
-                    hire: 'Permission granted 🚀 - you can now hire me!',
-                    coffee: '☕ Brewing… done.',
-                    ei: 'ANIMATE_EGG',
-                    quote: '"Programs must be written for people to read, and only incidentally for machines to execute." — Harold Abelson.',
-                    bossfight: `Tackling university as a career changer during Covid and endless online lectures was my personal bossfight. It wasn't easy, but it taught me how to throw myself into new problems and adapt quickly, learning to work efficiently in completely new environments.`,
-                    exit: `Nice try! 😄
-This is a web terminal - there's no escape!
-Try 'clear' instead to clean up the screen.`,
-                };
+                function getCommands() {
+                    const t = window.i18n ? window.i18n.static[window.currentLang] : {};
+                    return {
+                        help:       t.cmd_help,
+                        whoami:     t.cmd_whoami,
+                        skills:     t.cmd_skills,
+                        contact:    t.cmd_contact,
+                        experience: t.cmd_experience,
+                        education:  t.cmd_education,
+                        hire:       t.cmd_hire,
+                        coffee:     t.cmd_coffee,
+                        bossfight:  t.cmd_bossfight,
+                        exit:       t.cmd_exit,
+                        clear:      'CLEAR_TERMINAL',
+                        ei:         'ANIMATE_EGG',
+                        quote:      '"Programs must be written for people to read, and only incidentally for machines to execute." — Harold Abelson.',
+                    };
+                }
 
                 // Initialize terminal
                 terminalInput.addEventListener('keydown', handleKeyDown);
@@ -900,6 +641,8 @@ Try 'clear' instead to clean up the screen.`,
                 }
 
                 function executeCommand(command) {
+                    const commands = getCommands();
+                    const t = window.i18n.static[window.currentLang];
                     // Remove cursor
                     const cursor = document.querySelector('.cursor');
                     if (cursor) cursor.remove();
@@ -907,7 +650,8 @@ Try 'clear' instead to clean up the screen.`,
                     // Add command with new format: ">Command: [command]" in #16AFD9 and bold
                     const commandLine = document.createElement('div');
                     commandLine.className = 'terminal-line';
-                    commandLine.innerHTML = `<span class="command-prefix">&gt;Command: [${command}]</span>`;
+                    commandLine.setAttribute('data-cmdline', command);
+                    commandLine.innerHTML = `<span class="command-prefix">&gt;${t.terminal_cmd_prefix}: [${command}]</span>`;
                     terminalOutput.appendChild(commandLine);
 
                     // Process command
@@ -915,29 +659,21 @@ Try 'clear' instead to clean up the screen.`,
                         if (commands[command] === 'CLEAR_TERMINAL') {
                             clearTerminal();
                             return;
-                        } else if (commands[command] === 'NAVIGATE_TO_WORK') {
-                            // Navigate to work section
-                            document.querySelector('a[href="#intro"]').click();
-                            return;
                         } else if (commands[command] === 'ANIMATE_EGG') {
                             animateEgg();
                             return;
                         }
-                        
+
                         const outputDiv = document.createElement('div');
                         outputDiv.className = 'output-text';
-                        // For ASCII art commands like 'ei', preserve whitespace formatting
-                        if (command === 'ei') {
-                            outputDiv.style.whiteSpace = 'pre';
-                            outputDiv.textContent = commands[command];
-                        } else {
-                            outputDiv.innerHTML = commands[command].replace(/\n/g, '<br>');
-                        }
+                        outputDiv.setAttribute('data-cmd', command);
+                        outputDiv.innerHTML = commands[command].replace(/\n/g, '<br>');
                         terminalOutput.appendChild(outputDiv);
                     } else {
                         const errorDiv = document.createElement('div');
                         errorDiv.className = 'output-text error';
-                        errorDiv.innerHTML = `Command not found: ${command}<br>Type 'help' for available commands.`;
+                        errorDiv.setAttribute('data-notfound', command);
+                        errorDiv.innerHTML = t.cmd_not_found.replace('{cmd}', command);
                         terminalOutput.appendChild(errorDiv);
                     }
 
@@ -953,14 +689,11 @@ Try 'clear' instead to clean up the screen.`,
 
                 function clearTerminal() {
                     terminalOutput.innerHTML = `
-                        <div class="output-text">
-                            Welcome to my interactive portfolio terminal!<br>
-                            Type 'help' to see available commands, click the buttons below or try out some commands yourself! Maybe you'll find some interesting info!<br>
-                        </div>
-                        <div class="terminal-line">
-                            <span class="cursor">_</span>
-                        </div>
-                    `;
+        <div class="output-text" data-i18n="terminal_welcome">
+            ${window.i18n.static[window.currentLang].terminal_welcome}
+        </div>
+        <div class="terminal-line"><span class="cursor">_</span></div>
+    `;
                 }
 
                 // Auto-focus input when clicking in terminal
@@ -1053,6 +786,7 @@ Try 'clear' instead to clean up the screen.`,
 
                 // Show secret commands
                 function showSecretCommands() {
+                    const t = window.i18n.static[window.currentLang];
                     // Remove cursor
                     const cursor = document.querySelector('.cursor');
                     if (cursor) cursor.remove();
@@ -1060,12 +794,14 @@ Try 'clear' instead to clean up the screen.`,
                     // Add the secret discovery message to terminal
                     const commandLine = document.createElement('div');
                     commandLine.className = 'terminal-line';
-                    commandLine.innerHTML = `<span class="command-prefix">&gt;Secret button discovered!</span>`;
+                    commandLine.setAttribute('data-secretline', '1');
+                    commandLine.innerHTML = `<span class="command-prefix">&gt;${t.secret_prefix}</span>`;
                     terminalOutput.appendChild(commandLine);
 
                     const secretMessage = document.createElement('div');
                     secretMessage.className = 'output-text';
-                    secretMessage.innerHTML = `Ah you found the secret button! Here are the hidden commands you can use: hire, coffee, quote, bossfight.`;
+                    secretMessage.setAttribute('data-i18n', 'secret_msg');
+                    secretMessage.innerHTML = t.secret_msg;
                     terminalOutput.appendChild(secretMessage);
 
                     // Add new prompt with cursor
@@ -1082,25 +818,25 @@ Try 'clear' instead to clean up the screen.`,
 
         <!-- Contact -->
         <article id="contact">
-            <h2 class="major">Contact</h2>
+            <h2 class="major" data-i18n="contact_heading">Contact</h2>
             <form method="post" action="#">
                 <div class="fields">
                     <div class="field half">
-                        <label for="name">Name</label>
+                        <label for="name" data-i18n="contact_name">Name</label>
                         <input type="text" name="name" id="name" />
                     </div>
                     <div class="field half">
-                        <label for="email">Email</label>
+                        <label for="email" data-i18n="contact_email">Email</label>
                         <input type="text" name="email" id="email" />
                     </div>
                     <div class="field">
-                        <label for="message">Message</label>
+                        <label for="message" data-i18n="contact_message">Message</label>
                         <textarea name="message" id="message" rows="4"></textarea>
                     </div>
                 </div>
                 <ul class="actions">
-                    <li><input type="submit" value="Send Message" class="primary" /></li>
-                    <li><input type="reset" value="Reset" /></li>
+                    <li><input type="submit" value="Send Message" class="primary" data-i18n-value="contact_send" /></li>
+                    <li><input type="reset" value="Reset" data-i18n-value="contact_reset" /></li>
                 </ul>
             </form>
             <ul class="icons">
@@ -1122,8 +858,7 @@ Try 'clear' instead to clean up the screen.`,
                 <br>
                 <h2><b>Kontakt</b><br></h2>
                 <b>E-Mail:</b> tayfunakincir@gmail.com<br>
-                Quelle: <element id="hyperlink"><a href="https://www.e-recht24.de/impressum-generator.html" target="_blank" rel="noopener noreferrer">e-recht24.de</a></element>
-                </p>
+                Quelle: <a href="https://www.e-recht24.de/impressum-generator.html" target="_blank" rel="noopener noreferrer">e-recht24.de</a>
             </section>
         </article>
 
@@ -1157,7 +892,7 @@ Try 'clear' instead to clean up the screen.`,
 
                 <h3>Speicherdauer</h3> <p>Soweit innerhalb dieser Datenschutzerkl&auml;rung keine speziellere Speicherdauer genannt wurde, verbleiben Ihre personenbezogenen Daten bei uns, bis der Zweck f&uuml;r die Datenverarbeitung entf&auml;llt. Wenn Sie ein berechtigtes L&ouml;schersuchen geltend machen oder eine Einwilligung zur Datenverarbeitung widerrufen, werden Ihre Daten gel&ouml;scht, sofern wir keine anderen rechtlich zul&auml;ssigen Gr&uuml;nde f&uuml;r die Speicherung Ihrer personenbezogenen Daten haben (z.&nbsp;B. steuer- oder handelsrechtliche Aufbewahrungsfristen); im letztgenannten Fall erfolgt die L&ouml;schung nach Fortfall dieser Gr&uuml;nde.</p>
                 <h3>Allgemeine Hinweise zu den Rechtsgrundlagen der Datenverarbeitung auf dieser Website</h3> <p>Sofern Sie in die Datenverarbeitung eingewilligt haben, verarbeiten wir Ihre personenbezogenen Daten auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO bzw. Art. 9 Abs. 2 lit. a DSGVO, sofern besondere Datenkategorien nach Art. 9 Abs. 1 DSGVO verarbeitet werden. Im Falle einer ausdr&uuml;cklichen Einwilligung in die &Uuml;bertragung personenbezogener Daten in Drittstaaten erfolgt die Datenverarbeitung au&szlig;erdem auf Grundlage von Art. 49 Abs. 1 lit. a DSGVO. Sofern Sie in die Speicherung von Cookies oder in den Zugriff auf Informationen in Ihr Endger&auml;t (z.&nbsp;B. via Device-Fingerprinting) eingewilligt haben, erfolgt die Datenverarbeitung zus&auml;tzlich auf Grundlage von &sect; 25 Abs. 1 TTDSG. Die Einwilligung ist jederzeit widerrufbar. Sind Ihre Daten zur Vertragserf&uuml;llung oder zur Durchf&uuml;hrung vorvertraglicher Ma&szlig;nahmen erforderlich, verarbeiten wir Ihre Daten auf Grundlage des Art. 6 Abs. 1 lit. b DSGVO. Des Weiteren verarbeiten wir Ihre Daten, sofern diese zur Erf&uuml;llung einer rechtlichen Verpflichtung erforderlich sind auf Grundlage von Art. 6 Abs. 1 lit. c DSGVO. Die Datenverarbeitung kann ferner auf Grundlage unseres berechtigten Interesses nach Art. 6 Abs. 1 lit. f DSGVO erfolgen. &Uuml;ber die jeweils im Einzelfall einschl&auml;gigen Rechtsgrundlagen wird in den folgenden Abs&auml;tzen dieser Datenschutzerkl&auml;rung informiert.</p>
-                <h3>Hinweis zur Datenweitergabe in die USA und sonstige Drittstaaten</h3> <p>Wir verwenden unter anderem Tools von Unternehmen mit Sitz in den USA oder sonstigen datenschutzrechtlich nicht sicheren Drittstaaten. Wenn diese Tools aktiv sind, k&ouml;nnen Ihre personenbezogene Daten in diese Drittstaaten &uuml;bertragen und dort verarbeitet werden. Wir weisen darauf hin, dass in diesen L&auml;ndern kein mit der EU vergleichbares Datenschutzniveau garantiert werden kann. Beispielsweise sind US-Unternehmen dazu verpflichtet, personenbezogene Daten an Sicherheitsbeh&ouml;rden herauszugeben, ohne dass Sie als Betroffener hiergegen gerichtlich vorgehen k&oumlnnten. Es kann daher nicht ausgeschlossen werden, dass US-Beh&ouml;rden (z.&nbsp;B. Geheimdienste) Ihre auf US-Servern befindlichen Daten zu &Uuml;berwachungszwecken verarbeiten, auswerten und dauerhaft speichern. Wir haben auf diese Verarbeitungst&auml;tigkeiten keinen Einfluss.</p><h3>Widerruf Ihrer Einwilligung zur Datenverarbeitung</h3> <p>Viele Datenverarbeitungsvorg&auml;nge sind nur mit Ihrer ausdr&uuml;cklichen Einwilligung m&ouml;glich. Sie k&ouml;nnen eine bereits erteilte Einwilligung jederzeit widerrufen. Die Rechtm&auml;&szlig;igkeit der bis zum Widerruf erfolgten Datenverarbeitung bleibt vom Widerruf unber&uuml;hrt.</p>
+                <h3>Hinweis zur Datenweitergabe in die USA und sonstige Drittstaaten</h3> <p>Wir verwenden unter anderem Tools von Unternehmen mit Sitz in den USA oder sonstigen datenschutzrechtlich nicht sicheren Drittstaaten. Wenn diese Tools aktiv sind, k&ouml;nnen Ihre personenbezogene Daten in diese Drittstaaten &uuml;bertragen und dort verarbeitet werden. Wir weisen darauf hin, dass in diesen L&auml;ndern kein mit der EU vergleichbares Datenschutzniveau garantiert werden kann. Beispielsweise sind US-Unternehmen dazu verpflichtet, personenbezogene Daten an Sicherheitsbeh&ouml;rden herauszugeben, ohne dass Sie als Betroffener hiergegen gerichtlich vorgehen k&ouml;nnten. Es kann daher nicht ausgeschlossen werden, dass US-Beh&ouml;rden (z.&nbsp;B. Geheimdienste) Ihre auf US-Servern befindlichen Daten zu &Uuml;berwachungszwecken verarbeiten, auswerten und dauerhaft speichern. Wir haben auf diese Verarbeitungst&auml;tigkeiten keinen Einfluss.</p><h3>Widerruf Ihrer Einwilligung zur Datenverarbeitung</h3> <p>Viele Datenverarbeitungsvorg&auml;nge sind nur mit Ihrer ausdr&uuml;cklichen Einwilligung m&ouml;glich. Sie k&ouml;nnen eine bereits erteilte Einwilligung jederzeit widerrufen. Die Rechtm&auml;&szlig;igkeit der bis zum Widerruf erfolgten Datenverarbeitung bleibt vom Widerruf unber&uuml;hrt.</p>
                 <h3>Widerspruchsrecht gegen die Datenerhebung in besonderen F&auml;llen sowie gegen Direktwerbung (Art. 21 DSGVO)</h3> <p>WENN DIE DATENVERARBEITUNG AUF GRUNDLAGE VON ART. 6 ABS. 1 LIT. E ODER F DSGVO ERFOLGT, HABEN SIE JEDERZEIT DAS RECHT, AUS GR&Uuml;NDEN, DIE SICH AUS IHRER BESONDEREN SITUATION ERGEBEN, GEGEN DIE VERARBEITUNG IHRER PERSONENBEZOGENEN DATEN WIDERSPRUCH EINZULEGEN; DIES GILT AUCH F&Uuml;R EIN AUF DIESE BESTIMMUNGEN GEST&Uuml;TZTES PROFILING. DIE JEWEILIGE RECHTSGRUNDLAGE, AUF DENEN EINE VERARBEITUNG BERUHT, ENTNEHMEN SIE DIESER DATENSCHUTZERKL&Auml;RUNG. WENN SIE WIDERSPRUCH EINLEGEN, WERDEN WIR IHRE BETROFFENEN PERSONENBEZOGENEN DATEN NICHT MEHR VERARBEITEN, ES SEI DENN, WIR K&Ouml;NNEN ZWINGENDE SCHUTZW&Uuml;RDIGE GR&Uuml;NDE F&Uuml;R DIE VERARBEITUNG NACHWEISEN, DIE IHRE INTERESSEN, RECHTE UND FREIHEITEN &Uuml;BERWIEGEN ODER DIE VERARBEITUNG DIENT DER GELTENDMACHUNG, AUS&Uuml;BUNG ODER VERTEIDIGUNG VON RECHTSANSPR&Uuml;CHEN (WIDERSPRUCH NACH ART. 21 ABS. 1 DSGVO).</p> <p>WERDEN IHRE PERSONENBEZOGENEN DATEN VERARBEITET, UM DIREKTWERBUNG ZU BETREIBEN, SO HABEN SIE DAS RECHT, JEDERZEIT WIDERSPRUCH GEGEN DIE VERARBEITUNG SIE BETREFFENDER PERSONENBEZOGENEN DATEN ZUM ZWECKE DERARTIGER WERBUNG EINZULEGEN; DIES GILT AUCH F&Uuml;R DAS PROFILING, SOWEIT ES MIT SOLCHER DIREKTWERBUNG IN VERBINDUNG STEHT. WENN SIE WIDERSPRECHEN, WERDEN IHRE PERSONENBEZOGENEN DATEN ANSCHLIESSEND NICHT MEHR ZUM ZWECKE DER DIREKTWERBUNG VERWENDET (WIDERSPRUCH NACH ART. 21 ABS. 2 DSGVO).</p>
                 <h3>Beschwerde&shy;recht bei der zust&auml;ndigen Aufsichts&shy;beh&ouml;rde</h3> <p>Im Falle von Verst&ouml;&szlig;en gegen die DSGVO steht den Betroffenen ein Beschwerderecht bei einer Aufsichtsbeh&ouml;rde, insbesondere in dem Mitgliedstaat ihres gew&ouml;hnlichen Aufenthalts, ihres Arbeitsplatzes oder des Orts des mutma&szlig;lichen Versto&szlig;es zu. Das Beschwerderecht besteht unbeschadet anderweitiger verwaltungsrechtlicher oder gerichtlicher Rechtsbehelfe.</p>
                 <h3>Recht auf Daten&shy;&uuml;bertrag&shy;barkeit</h3> <p>Sie haben das Recht, Daten, die wir auf Grundlage Ihrer Einwilligung oder in Erf&uuml;llung eines Vertrags automatisiert verarbeiten, an sich oder an einen Dritten in einem g&auml;ngigen, maschinenlesbaren Format aush&auml;ndigen zu lassen. Sofern Sie die direkte &Uuml;bertragung der Daten an einen anderen Verantwortlichen verlangen, erfolgt dies nur, soweit es technisch machbar ist.</p>
@@ -1171,253 +906,15 @@ Try 'clear' instead to clean up the screen.`,
             </section>
         </article>
 
-        <!-- Elements -->
-        <article id="elements">
-            <h2 class="major">Elements</h2>
-
-            <section>
-                <h3 class="major">Text</h3>
-                <p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
-                    This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
-                    This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
-                <hr />
-                <h2>Heading Level 2</h2>
-                <h3>Heading Level 3</h3>
-                <h4>Heading Level 4</h4>
-                <h5>Heading Level 5</h5>
-                <h6>Heading Level 6</h6>
-                <hr />
-                <h4>Blockquote</h4>
-                <blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
-                <h4>Preformatted</h4>
-                <pre><code>i = 0;
-
-while (!deck.isInOrder()) {
-    print 'Iteration ' + i;
-    deck.shuffle();
-    i++;
-}
-
-print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
-            </section>
-
-            <section>
-                <h3 class="major">Lists</h3>
-
-                <h4>Unordered</h4>
-                <ul>
-                    <li>Dolor pulvinar etiam.</li>
-                    <li>Sagittis adipiscing.</li>
-                    <li>Felis enim feugiat.</li>
-                </ul>
-
-                <h4>Alternate</h4>
-                <ul class="alt">
-                    <li>Dolor pulvinar etiam.</li>
-                    <li>Sagittis adipiscing.</li>
-                    <li>Felis enim feugiat.</li>
-                </ul>
-
-                <h4>Ordered</h4>
-                <ol>
-                    <li>Dolor pulvinar etiam.</li>
-                    <li>Etiam vel felis viverra.</li>
-                    <li>Felis enim feugiat.</li>
-                    <li>Dolor pulvinar etiam.</li>
-                    <li>Etiam vel felis lorem.</li>
-                    <li>Felis enim et feugiat.</li>
-                </ol>
-                <h4>Icons</h4>
-                <ul class="icons">
-                    <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-                    <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-                    <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-                    <li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-                </ul>
-
-                <h4>Actions</h4>
-                <ul class="actions">
-                    <li><a href="#" class="button primary">Default</a></li>
-                    <li><a href="#" class="button">Default</a></li>
-                </ul>
-                <ul class="actions stacked">
-                    <li><a href="#" class="button primary">Default</a></li>
-                    <li><a href="#" class="button">Default</a></li>
-                </ul>
-            </section>
-
-            <section>
-                <h3 class="major">Table</h3>
-                <h4>Default</h4>
-                <div class="table-wrapper">
-                    <table>
-                        <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Description</th>
-                            <th>Price</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>Item One</td>
-                            <td>Ante turpis integer aliquet porttitor.</td>
-                            <td>29.99</td>
-                        </tr>
-                        <tr>
-                            <td>Item Two</td>
-                            <td>Vis ac commodo adipiscing arcu aliquet.</td>
-                            <td>19.99</td>
-                        </tr>
-                        <tr>
-                            <td>Item Three</td>
-                            <td> Morbi faucibus arcu accumsan lorem.</td>
-                            <td>29.99</td>
-                        </tr>
-                        <tr>
-                            <td>Item Four</td>
-                            <td>Vitae integer tempus condimentum.</td>
-                            <td>19.99</td>
-                        </tr>
-                        <tr>
-                            <td>Item Five</td>
-                            <td>Ante turpis integer aliquet porttitor.</td>
-                            <td>29.99</td>
-                        </tr>
-                        </tbody>
-                        <tfoot>
-                        <tr>
-                            <td colspan="2"></td>
-                            <td>100.00</td>
-                        </tr>
-                        </tfoot>
-                    </table>
-                </div>
-
-                <h4>Alternate</h4>
-                <div class="table-wrapper">
-                    <table class="alt">
-                        <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Description</th>
-                            <th>Price</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>Item One</td>
-                            <td>Ante turpis integer aliquet porttitor.</td>
-                            <td>29.99</td>
-                        </tr>
-                        <tr>
-                            <td>Item Two</td>
-                            <td>Vis ac commodo adipiscing arcu aliquet.</td>
-                            <td>19.99</td>
-                        </tr>
-                        <tr>
-                            <td>Item Three</td>
-                            <td> Morbi faucibus arcu accumsan lorem.</td>
-                            <td>29.99</td>
-                        </tr>
-                        <tr>
-                            <td>Item Four</td>
-                            <td>Vitae integer tempus condimentum.</td>
-                            <td>19.99</td>
-                        </tr>
-                            <td>Item Five</td>
-                            <td>Ante turpis integer aliquet porttitor.</td>
-                            <td>29.99</td>
-                        </tr>
-                        </tbody>
-                        <tfoot>
-                        <tr>
-                            <td colspan="2"></td>
-                            <td>100.00</td>
-                        </tr>
-                        </tfoot>
-                    </table>
-                </div>
-            </section>
-
-            <section>
-                <h3 class="major">Buttons</h3>
-                <ul class="actions">
-                    <li><a href="#" class="button primary">Primary</a></li>
-                    <li><a href="#" class="button">Default</a></li>
-                </ul>
-                <ul class="actions">
-                    <li><a href="#" class="button">Default</a></li>
-                    <li><a href="#" class="button small">Small</a></li>
-                </ul>
-                <ul class="actions">
-                    <li><a href="#" class="button primary icon solid fa-download">Icon</a></li>
-                    <li><a href="#" class="button icon solid fa-download">Icon</a></li>
-                </ul>
-                <ul class="actions">
-                    <li><span class="button primary disabled">Disabled</span></li>
-                    <li><span class="button disabled">Disabled</span></li>
-                </ul>
-            </section>
-
-            <section>
-                <h3 class="major">Form</h3>
-                <form method="post" action="#">
-                    <div class="fields">
-                        <div class="field half">
-                            <label for="demo-name">Name</label>
-                            <input type="text" name="demo-name" id="demo-name" value="" placeholder="Tayfun Akincir" />
-                        </div>
-                        <div class="field half">
-                            <label for="demo-email">Email</label>
-                            <input type="email" name="demo-email" id="demo-email" value="" placeholder="tayfunakincir@gmail.com" />
-                        </div>
-                        <div class="field">
-                            <label for="demo-category">Category</label>
-                            <select name="demo-category" id="demo-category">
-                                <option value="">-</option>
-                                <option value="1">Manufacturing</option>
-                                <option value="1">Shipping</option>
-                                <option value="1">Administration</option>
-                                <option value="1">Human Resources</option>
-                            </select>
-                        </div>
-                        <div class="field half">
-                            <input type="radio" id="demo-priority-low" name="demo-priority" checked>
-                            <label for="demo-priority-low">Low</label>
-                        </div>
-                        <div class="field half">
-                            <input type="radio" id="demo-priority-high" name="demo-priority">
-                            <label for="demo-priority-high">High</label>
-                        </div>
-                        <div class="field half">
-                            <input type="checkbox" id="demo-copy" name="demo-copy">
-                            <label for="demo-copy">Email me a copy</label>
-                        </div>
-                        <div class="field half">
-                            <input type="checkbox" id="demo-human" name="demo-human" checked>
-                            <label for="demo-human">Not a robot</label>
-                        </div>
-                        <div class="field">
-                            <label for="demo-message">Message</label>
-                            <textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
-                        </div>
-                    </div>
-                    <ul class="actions">
-                        <li><input type="submit" value="Send Message" class="primary" /></li>
-                        <li><input type="reset" value="Reset" /></li>
-                    </ul>
-                </form>
-            </section>
-
-        </article>
 
     </div>
 
     <!-- Project Detail Modal - Positioned outside all containers for proper viewport centering -->
     <div id="project-modal" class="modal" onclick="event.stopPropagation();">
         <div class="modal-content">
-            <span class="close" onclick="event.preventDefault(); event.stopPropagation(); closeProjectDetails();">&times;</span>
+            <span class="close" role="button" tabindex="0" aria-label="Close"
+                  onclick="event.preventDefault(); event.stopPropagation(); closeProjectDetails();"
+                  onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault(); event.stopPropagation(); closeProjectDetails();}">&times;</span>
             <div id="modal-body">
                 <!-- Dynamic content will be loaded here -->
             </div>
@@ -1426,7 +923,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 
     <!-- Footer -->
     <footer id="footer">
-        <p class="copyright">&copy; Tayfun Akincir | Design: Based on <a href="https://html5up.net/dimension">HTML5 UP</a> | BG: <a href="https://www.freepik.com/free-photo/abstract-plexus-blue-geometrical-shapes-connection-ai-generated-image_41111846.htm#query=coding&position=7&from_view=keyword&track=sph&uuid=59ed6313-7d47-43b5-ad2d-3eb8d49895fe">FreePik</a> | <a href="#impressum">Impressum</a> | <a href="#datenschutz">Datenschutzerklärung</a></p>
+        <p class="copyright">&copy; Tayfun Akincir | <span data-i18n="footer_design">Design: Based on</span> <a href="https://html5up.net/dimension" target="_blank" rel="noopener noreferrer">HTML5 UP</a> | <span data-i18n="footer_bg">BG:</span> <a href="https://www.freepik.com/free-photo/abstract-plexus-blue-geometrical-shapes-connection-ai-generated-image_41111846.htm#query=coding&amp;position=7&amp;from_view=keyword&amp;track=sph&amp;uuid=59ed6313-7d47-43b5-ad2d-3eb8d49895fe" target="_blank" rel="noopener noreferrer">FreePik</a> | <a href="#impressum" data-i18n="footer_impressum">Legal Notice</a> | <a href="#datenschutz" data-i18n="footer_privacy">Privacy Policy</a></p>
     </footer>
 
 </div>
@@ -1435,6 +932,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 <div id="bg"></div>
 
 <!-- Scripts -->
+<script src="assets/js/i18n.js"></script>
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/browser.min.js"></script>
 <script src="assets/js/breakpoints.min.js"></script>

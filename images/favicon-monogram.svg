@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <rect width="64" height="64" rx="14" fill="#16AFD9"/>
+  <!-- T -->
+  <path d="M7 17 h22 v6.5 h-8 V47 h-6 V23.5 h-8 Z" fill="#14181b"/>
+  <!-- A -->
+  <path d="M46 17 L57 47 h-6.2 l-2.1-6.1 h-9.4 L37.2 47 H31 L42 17 Z
+           M46.6 35.4 L44 27.6 L41.4 35.4 Z"
+        fill="#14181b" fill-rule="evenodd"/>
+</svg>

@@ -1704,6 +1704,12 @@ body.is-preload #footer {
     border-color: rgba(255, 255, 255, 0.3);
 }
 
+.project-card:focus-visible {
+    outline: 2px solid #16AFD9;
+    outline-offset: 3px;
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
 .project-card.publication {
     border-color: rgba(255, 215, 0, 0.3);
 }
@@ -1900,7 +1906,7 @@ body.modal-open {
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    font-size: 1rem !important;
+    font-size: 1.4rem !important;
     color: #ffffff !important;
     transition: all 0.3s ease !important;
     text-decoration: none !important;
@@ -1949,6 +1955,12 @@ body.modal-open {
     height: 12px;
     border-radius: 50%;
     display: block;
+}
+
+/* NOTE: do not use a bare ".close" modifier here - "#main article .close"
+   out-specifies it and turns the dot into the article's 3rem close button. */
+.terminal-btn.terminal-close {
+    background: #ff5f56;
 }
 
 .terminal-btn.minimize {
@@ -2168,55 +2180,4 @@ body.modal-open {
     border-color: rgba(255, 255, 255, 0.6);
     transform: scale(1.1);
     box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
-}
-
-/* Secret Commands Modal */
-.secret-commands-modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.8);
-    z-index: 10000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.secret-commands-modal .modal-content {
-    background: #1e1e1e;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
-    padding: 2rem;
-    max-width: 20vw;
-    max-height: 90vh;
-    overflow: auto;
-    position: relative;
-}
-
-.secret-commands-modal .close {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    width: 2rem;
-    height: 2rem;
-    background: #ff5f56;
-    border: none;
-    border-radius: 50%;
-    color: white;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2rem;
-}
-
-.secret-commands-modal pre {
-    color: #00ff00;
-    font-family: 'Courier New', 'Monaco', 'Menlo', monospace;
-    font-size: 0.9rem;
-    line-height: 1.4;
-    margin: 0;
-    white-space: pre-wrap;
 }

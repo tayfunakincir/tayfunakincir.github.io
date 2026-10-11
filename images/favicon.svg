@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <rect width="64" height="64" rx="14" fill="#16AFD9"/>
+  <!-- VR visor: body with two lens cut-outs, plus head strap stubs -->
+  <path d="M10 26 h44 a4 4 0 0 1 4 4 v9 a7 7 0 0 1 -7 7 h-9 a4 4 0 0 1 -3.4 -1.9 L35.6 41 a4 4 0 0 0 -7.2 0 l-3 3.1 A4 4 0 0 1 22 46 h-9 a7 7 0 0 1 -7 -7 v-9 a4 4 0 0 1 4 -4 Z
+           M19 31.5 a5.5 5.5 0 1 0 0.01 0 Z
+           M45 31.5 a5.5 5.5 0 1 0 0.01 0 Z"
+        fill="#14181b" fill-rule="evenodd"/>
+  <path d="M14 23 h36 v-2.5 a3 3 0 0 0 -3 -3 H17 a3 3 0 0 0 -3 3 Z" fill="#14181b" opacity="0.55"/>
+</svg>
