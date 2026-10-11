@@ -132,7 +132,7 @@
                 nav_demo:             'Demo',
                 nav_about:            'Über mich',
                 lang_toggle: '<img src="https://flagcdn.com/24x18/de.png" alt="DE" width="24" height="18"><span id="lang-toggle-text">Switch language?</span>',
-                work_heading:         'Meine Arbeiten',
+                work_heading:         'Meine Projekte',
                 filter_label:         'Filtern nach Typ',
                 filter_all:           'Alle',
                 about_heading:        'Über mich',
@@ -141,19 +141,19 @@
                 terminal_placeholder: 'Befehl eingeben...',
 
                 // project card summaries
-                sum_project13:  'Multiplayer-VR-Produktkonfigurator für Goldbeck',
-                sum_project12:  'Veröffentlichter VR-Sporttitel für Meta Quest &amp; Pico',
-                sum_project1:   'Netzwerk-Replikations-Prototyp mit C++-Implementierung',
-                sum_project2:   'Kollaborative VR-Einrichtungsanwendung',
-                sum_project3:   'Body-Tracking-Showroom mit Multiplayer-Unterstützung',
-                sum_project4:   'Dynamische Mesh-Generierung für Haus-Design-Editor',
-                sum_project5:   'Notfallmedizin-Triage-Simulation (Bachelorarbeit)',
-                sum_project6:   'Interaktives paläontologisches Serious Game',
-                sum_project7:   'Übersicht über 200+ VR/AR/MR-Designmuster',
-                sum_project8:   'Interaktive Arbeitsplatzpräsentation für Rossmann',
-                sum_project9:   'Interaktive Arbeitsplatzpräsentation für KIND',
+                sum_project13:  'VR-Produktkonfigurator mit Multiplayer für Goldbeck',
+                sum_project12:  'VR-Sportspiel, erschienen für Meta Quest &amp; Pico',
+                sum_project1:   'Prototyp für Netzwerk-Replikation in C++',
+                sum_project2:   'VR-Anwendung zum gemeinsamen Einrichten von Räumen',
+                sum_project3:   'Showroom mit Body-Tracking und Multiplayer',
+                sum_project4:   'Dynamische Mesh-Generierung für einen VR-Hausplaner',
+                sum_project5:   'VR-Simulation für die Notfall-Triage (Bachelorarbeit)',
+                sum_project6:   'Interaktives Serious Game rund um Paläontologie',
+                sum_project7:   'Katalog mit über 200 Designmustern für VR, AR und MR',
+                sum_project8:   'Interaktiver Einblick in den Arbeitsalltag bei Rossmann',
+                sum_project9:   'Interaktiver Einblick in den Arbeitsalltag bei KIND',
                 sum_project10:  'Humorvolle VR-Kochsimulation für Studenten',
-                sum_project11:  'Klassisches „Gauntlet“-inspiriertes Universitätsprojekt',
+                sum_project11:  'Uni-Projekt im Stil des Arcade-Klassikers „Gauntlet“',
 
                 // project card titles
                 title_project13: 'GBCity Experience',
@@ -164,7 +164,7 @@
                 title_project4:  'Prozedurale Mesh-Generierung',
                 title_project5:  'VR-Triage-Prototyp',
                 title_project6:  'VRex: Virtuelle Paläontologie',
-                title_project7:  'UI-Designmuster-Paper',
+                title_project7:  'Paper zu UI-Designmustern',
                 title_project8:  'Rossmann VR',
                 title_project9:  'KIND VR',
                 title_project10: 'University Recipes',
@@ -245,7 +245,7 @@
                     title: "Goal King - 2025",
                     description: "Commercially released VR title available on Meta Quest and Pico stores. Responsible for converting the existing Unreal Engine codebase to Unity, implementing VR interaction systems, and ongoing feature integration as part of a 3-person team at Fansea.",
                     image: "images/work12.jpg",
-                    details: ["<b>Organisation:</b> Fansea GmbH","<b>Tech Stack:</b> Unity, C#","<b>My Role:</b> Unreal → Unity conversion, VR interaction, feature integration","<b>Team Size:</b> 3","<b>Development Time:</b> Ongoing"],
+                    details: ["<b>Organisation:</b> Fansea GmbH","<b>Tech Stack:</b> Unity, C#","<b>My Role:</b> Unreal → Unity conversion, VR interaction, feature integration","<b>Team Size:</b> 3","<b>Development Time:</b> Ongoing"],
                     metaLink: "https://www.meta.com/de-de/experiences/goal-king/5211598935630591/",
                     picoLink: "https://store-global.picoxr.com/global/detail/1/7480434548917010437"
                 },
@@ -331,92 +331,92 @@
             de: {
                 project13: {
                     title: "GBCity Experience - 2025",
-                    description: "Multiplayer-VR-Produktkonfigurator für Goldbeck, der mehreren Nutzern ermöglicht, Goldbecks modulare Gebäudelösungen gemeinsam in Echtzeit zu erkunden und zu konfigurieren. Multiplayer-Synchronisation mit Unity Netcode for GameObjects implementiert. Enthält ein Operator-User-System, bei dem ein Operator die VR-Erfahrung der Nutzer über ein Windows-Tablet überwacht und steuert.",
+                    description: "VR-Produktkonfigurator für Goldbeck, in dem mehrere Nutzer die modularen Gebäudelösungen gemeinsam und in Echtzeit erkunden und konfigurieren können. Die Multiplayer-Synchronisation habe ich mit Unity Netcode for GameObjects umgesetzt. Dazu kommt ein Operator-User-System: Ein Operator begleitet die VR-Session der Nutzer über ein Windows-Tablet und steuert sie.",
                     image: "images/work13.jpg",
                     details: ["<b>Organisation:</b> Fansea GmbH","<b>Tech-Stack:</b> Unity, C#, Netcode for Gameobjects","<b>Meine Rolle:</b> Multiplayer-Integration, VR-Interaktion, Feature-Integration","<b>Teamgröße:</b> 6","<b>Entwicklungszeit:</b> 1 Jahr"]
                 },
                 project12: {
                     title: "Goal King - 2025",
-                    description: "Kommerziell veröffentlichter VR-Titel, erhältlich im Meta Quest Store und im Pico Store. Verantwortlich für die Konvertierung der bestehenden Unreal-Engine-Codebasis nach Unity, die Implementierung von VR-Interaktionssystemen sowie laufende Feature-Integration als Teil eines 3-köpfigen Teams bei Fansea.",
+                    description: "Kommerziell veröffentlichtes VR-Spiel, erhältlich im Meta Quest Store und im Pico Store. Ich habe die bestehende Unreal-Engine-Codebasis auf Unity portiert, die VR-Interaktion umgesetzt und entwickle in einem dreiköpfigen Team bei Fansea laufend neue Features.",
                     image: "images/work12.jpg",
-                    details: ["<b>Organisation:</b> Fansea GmbH","<b>Tech-Stack:</b> Unity, C#","<b>Meine Rolle:</b> Unreal → Unity Konvertierung, VR-Interaktion, Feature-Integration","<b>Teamgröße:</b> 3","<b>Entwicklungszeit:</b> Laufend"],
+                    details: ["<b>Organisation:</b> Fansea GmbH","<b>Tech-Stack:</b> Unity, C#","<b>Meine Rolle:</b> Portierung von Unreal auf Unity, VR-Interaktion, Feature-Integration","<b>Teamgröße:</b> 3","<b>Entwicklungszeit:</b> Laufend"],
                     metaLink: "https://www.meta.com/de-de/experiences/goal-king/5211598935630591/",
                     picoLink: "https://store-global.picoxr.com/global/detail/1/7480434548917010437"
                 },
                 project1: {
                     title: "Arcane Arsenal - 2024",
-                    description: "Unreal-Engine-Multiplayer-Prototyp mit C++-Netzwerk-Replikation, RPCs und Blueprint-Performance-Benchmarking.",
+                    description: "Multiplayer-Prototyp in der Unreal Engine: Netzwerk-Replikation und RPCs in C++ umgesetzt, dazu Performance-Vergleiche zwischen C++ und Blueprints.",
                     image: "images/work1.jpg",
-                    details: ["<b>Organisation:</b> Litexa GmbH","<b>Tech-Stack:</b> Unreal Engine, C++, Blueprints","<b>Teamgröße:</b> Solo","<b>Entwicklungszeit:</b> 1 Monat"],
+                    details: ["<b>Organisation:</b> Litexa GmbH","<b>Tech-Stack:</b> Unreal Engine, C++, Blueprints","<b>Teamgröße:</b> Einzelprojekt","<b>Entwicklungszeit:</b> 1 Monat"],
                     video: "https://1drv.ms/v/c/cdbca53e5a3fb05c/EY7gbNFVTrNIhlAey146DDEBfMN-eoCTO1k5UKJJCpKDZg?e=u0uQU5"
                 },
                 project2: {
                     title: "VR House Designer - 2024",
-                    description: "Kollaborative VR-Anwendung, die mehreren Nutzern ermöglicht, Räume in Echtzeit gemeinsam zu gestalten und einzurichten. Multiplayer-Synchronisation über Photon Fusion und VR-Interaktionssysteme mit HurricaneVR implementiert.",
+                    description: "VR-Anwendung, in der mehrere Nutzer Räume gemeinsam und in Echtzeit gestalten und einrichten. Die Multiplayer-Synchronisation lief über Photon Fusion, die VR-Interaktion über HurricaneVR.",
                     image: "images/work2.jpg",
                     details: ["<b>Organisation:</b> Litexa GmbH","<b>Tech-Stack:</b> Unity3D, C#, HurricaneVR, Photon Fusion, VRIK","<b>Meine Rolle:</b> Multiplayer-Integration, VR-Interaktion, Programming Lead","<b>Teamgröße:</b> 3","<b>Entwicklungszeit:</b> 3 Monate"],
                     video: "https://1drv.ms/v/c/cdbca53e5a3fb05c/EY4GiQKe53hCsaD9hPWqS3MBCSCAkW6I1vC4jNSsQ1vnjg?e=QvDB4A"
                 },
                 project3: {
                     title: "Antilatency Showroom - 2023/2024",
-                    description: "Kommerzielle Showroom-Anwendung zur Demonstration von Full-Body-Tracking über das Antilatency SDK und VRIK, mit Multiplayer-Unterstützung für gleichzeitige Multi-User-Tracking-Sessions.",
+                    description: "Kommerzielle Showroom-Anwendung, die Full-Body-Tracking über das Antilatency SDK und VRIK zeigt – inklusive Multiplayer, sodass mehrere Nutzer gleichzeitig getrackt werden können.",
                     image: "images/work3.jpg",
                     details: ["<b>Organisation:</b> Litexa GmbH","<b>Tech-Stack:</b> Unity3D, C#, HurricaneVR, Photon Fusion, VRIK, Antilatency SDK","<b>Meine Rolle:</b> Multiplayer-Integration, Body-Tracking-Integration, VR-Interaktion, Programming Lead","<b>Teamgröße:</b> 3","<b>Entwicklungszeit:</b> 1 Jahr"],
                     video: "https://1drv.ms/v/c/cdbca53e5a3fb05c/EZIeY6WflpBGl0gnzr3bb0IBJ2TlPem4K-AtoaiFaqGo0Q?e=WHsjNw"
                 },
                 project4: {
                     title: "Prozedurale Mesh-Generierung - 2023",
-                    description: "Laufzeit-System zur prozeduralen Mesh-Generierung für einen VR-Haus-Editor, das die Simple & Advanced Mesh APIs von Unity sowie die ProBuilder API nutzt, um Geometrie dynamisch basierend auf Nutzereingaben zu erstellen.",
+                    description: "System, das Meshes zur Laufzeit prozedural erzeugt – für einen VR-Hausplaner. Es nutzt die Simple & Advanced Mesh APIs von Unity sowie die ProBuilder API, um Geometrie dynamisch aus den Eingaben der Nutzer aufzubauen.",
                     image: "images/work4.jpg",
-                    details: ["<b>Organisation:</b> Litexa GmbH","<b>Tech-Stack:</b> Unity3D, C#, Simple & Advanced Mesh API, ProBuilder API","<b>Teamgröße:</b> Solo","<b>Entwicklungszeit:</b> 1 Monat"],
+                    details: ["<b>Organisation:</b> Litexa GmbH","<b>Tech-Stack:</b> Unity3D, C#, Simple & Advanced Mesh API, ProBuilder API","<b>Teamgröße:</b> Einzelprojekt","<b>Entwicklungszeit:</b> 1 Monat"],
                     video: "https://1drv.ms/v/c/cdbca53e5a3fb05c/EbXi_2ua2ktJrnL6PFaBZFcBE-xvH2_E6IKbyjMCm1yFCg?e=RorroL"
                 },
                 project5: {
                     title: "VR-Triage-Prototyp - 2022",
-                    description: "VR-Trainingssimulation für Triage-Verfahren in der Notaufnahme, als Einzelprojekt im Rahmen meiner Bachelorarbeit in Zusammenarbeit mit dem Universitätsklinikum Heidelberg entwickelt.",
+                    description: "VR-Trainingssimulation für die Triage in der Notaufnahme, die ich allein im Rahmen meiner Bachelorarbeit in Zusammenarbeit mit dem Universitätsklinikum Heidelberg entwickelt habe.",
                     image: "images/work5.jpg",
-                    details: ["<b>Organisation:</b> Universitätsklinikum Heidelberg","<b>Tech-Stack:</b> Unity3D, C#, SteamVR","<b>Teamgröße:</b> Solo","<b>Entwicklungszeit:</b> 4 Monate"],
+                    details: ["<b>Organisation:</b> Universitätsklinikum Heidelberg","<b>Tech-Stack:</b> Unity3D, C#, SteamVR","<b>Teamgröße:</b> Einzelprojekt","<b>Entwicklungszeit:</b> 4 Monate"],
                     video: "https://1drv.ms/v/c/cdbca53e5a3fb05c/ES7_bkB_8mZLlIdyDlcUWtwBAd2W3-RXWXnCAb0dsqchEQ?e=gft78b",
                     thesis: "https://www.dropbox.com/s/3c88v03o6eyj2if/BA_Thesis_TAYFUN_AKINCIR.pdf?dl=0"
                 },
                 project6: {
                     title: "VRex: Virtuelle Paläontologie - 2022",
-                    description: "Lehrreiches Serious Game zur Simulation paläontologischer Feldarbeit, in einem 7-köpfigen Team entwickelt. Beiträge zu VR-Interaktionsdesign und zentralen Gameplay-Systemen.",
+                    description: "Serious Game, das paläontologische Feldarbeit simuliert, entwickelt in einem siebenköpfigen Team. Ich habe am VR-Interaktionsdesign und an zentralen Gameplay-Systemen mitgearbeitet.",
                     image: "images/work6.jpg",
                     details: ["<b>Organisation:</b> SRH Hochschule Heidelberg","<b>Tech-Stack:</b> Unity3D, C#, SteamVR","<b>Meine Rolle:</b> VR-Interaktion, Feature-Integration, Programming Lead","<b>Teamgröße:</b> 7","<b>Entwicklungszeit:</b> 4 Monate"],
                     video: "https://1drv.ms/v/c/cdbca53e5a3fb05c/EVhWCvYvmDpEuTIhvI14m2YB4_0f7e1JrEp5X_cUnThhZg?e=Dzw25d"
                 },
                 project7: {
                     title: "UI & Interaktions-Designmuster für VR, AR und MR - 2022",
-                    description: "Veröffentlichtes wissenschaftliches Paper mit einem Katalog von 200+ UI/UX-Designmustern für VR-, AR- und MR-Anwendungen. Präsentiert auf der MuC 2022 (Mensch und Computer).",
+                    description: "Veröffentlichtes wissenschaftliches Paper mit einem Katalog von über 200 UI/UX-Designmustern für VR-, AR- und MR-Anwendungen. Vorgestellt auf der MuC 2022 (Mensch und Computer).",
                     image: "images/work11.jpg",
-                    details: ["<b>DOI:</b> 10.18420/muc2022-mci-ws06-419","<b>Veröffentlicht:</b> September 2022","<b>Autorenschaft:</b> 2. Autor","<b>Hinweis:</b> Basiert auf Originalforschung, die auch UX-Normen und Richtlinien abdeckt."],
+                    details: ["<b>DOI:</b> 10.18420/muc2022-mci-ws06-419","<b>Veröffentlicht:</b> September 2022","<b>Autorenschaft:</b> Zweitautor","<b>Hinweis:</b> Basiert auf Originalforschung, die auch UX-Normen und Richtlinien abdeckt."],
                     paper: "https://www.researchgate.net/publication/363263265_An_Overview_of_User_Interface_and_Interaction_Design_Patterns_for_VR_AR_and_MR_Applications"
                 },
                 project8: {
                     title: "Rossmann VR - 2021",
-                    description: "Kommerzielle VR-Experience zur Präsentation von Arbeitsplatzszenarien bei Rossmann, konzipiert für Recruiting und Employer Branding. Innerhalb von 1 Monat als 2-köpfiges Team umgesetzt.",
+                    description: "Kommerzielle VR-Experience, die Arbeitsplätze bei Rossmann erlebbar macht – gedacht für Recruiting und Employer Branding. In einem Monat mit einem zweiköpfigen Team umgesetzt.",
                     image: "images/work7.jpg",
                     details: ["<b>Kunde:</b> Rossmann (über Einfach Genial aGmbH)","<b>Tech-Stack:</b> Unity3D, C#, SteamVR","<b>Meine Rolle:</b> VR-Interaktion, Feature-Integration","<b>Teamgröße:</b> 2","<b>Entwicklungszeit:</b> 1 Monat"],
                     video: "https://1drv.ms/v/c/cdbca53e5a3fb05c/EdwzeGHspGFCoXQwr5QTsecBsxEis7uhuJij9iTroG_YPA?e=qcEDqZ"
                 },
                 project9: {
                     title: "KIND VR - 2021",
-                    description: "Kommerzielle VR-Onboarding-Experience für Hörakustik-Spezialisten KIND, direkt im Anschluss an das Rossmann-Projekt entwickelt – zeigt effiziente Wiederverwendung von VR-Systemen über verschiedene Kunden hinweg.",
+                    description: "Kommerzielle VR-Experience zum Onboarding beim Hörakustiker KIND, direkt im Anschluss an das Rossmann-Projekt entstanden. Dadurch konnten wir große Teile der VR-Systeme wiederverwenden.",
                     image: "images/work8.jpg",
                     details: ["<b>Kunde:</b> KIND (über Einfach Genial aGmbH)","<b>Tech-Stack:</b> Unity3D, C#, SteamVR","<b>Meine Rolle:</b> VR-Interaktion, Feature-Integration","<b>Teamgröße:</b> 2","<b>Entwicklungszeit:</b> 1 Monat"],
                     video: "https://1drv.ms/v/c/cdbca53e5a3fb05c/EVeZrDTDReROlVZrzcXlATAB6y1M0CKlOqARlS_FV774aA?e=QbRRbQ"
                 },
                 project10: {
                     title: "University Recipes - 2020/2021",
-                    description: "Humorvolle VR-Kochsimulation, in einem 6-köpfigen Team entwickelt, mit Fokus auf XR-Interaction-Toolkit-Mechaniken und physikbasierter Objektinteraktion.",
+                    description: "Humorvolle VR-Kochsimulation, entwickelt in einem sechsköpfigen Team. Im Fokus standen die Mechaniken des XR Interaction Toolkits und physikbasierte Objektinteraktion.",
                     image: "images/work9.jpg",
                     details: ["<b>Organisation:</b> SRH Hochschule Heidelberg","<b>Tech-Stack:</b> Unity3D, C#, XR Interaction Toolkit","<b>Meine Rolle:</b> VR-Interaktion, Feature-Integration, Programming Lead","<b>Teamgröße:</b> 6","<b>Entwicklungszeit:</b> 3 Monate"],
                     video: "https://1drv.ms/v/c/cdbca53e5a3fb05c/EcplHZ343z9DuLbqCH-y5UABuwYG1103MmpEcTtLmv7sbA?e=g7ZPKq"
                 },
                 project11: {
                     title: "Blade Gunner - 2020",
-                    description: "Top-Down-Actionspiel, inspiriert vom Arcade-Klassiker Gauntlet, in C++ mit Raylib als 5-köpfiges Universitätsprojekt entwickelt.",
+                    description: "Top-Down-Actionspiel im Stil des Arcade-Klassikers Gauntlet, entwickelt in C++ mit Raylib als Uni-Projekt in einem fünfköpfigen Team.",
                     image: "images/work10.jpg",
                     details: ["<b>Organisation:</b> SRH Hochschule Heidelberg","<b>Tech-Stack:</b> C++, Raylib","<b>Meine Rolle:</b> Feature-Integration, Gegner-KI","<b>Teamgröße:</b> 5","<b>Entwicklungszeit:</b> 3 Monate"],
                     video: "https://1drv.ms/v/c/cdbca53e5a3fb05c/EUcytEcf-3lNqLJtwD7LOuQB9zciP9JLLxei_UMaSUGuzQ?e=kZuT6K"
